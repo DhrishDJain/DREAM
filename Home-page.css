@@ -74,6 +74,7 @@ nav {
 }
 
 .ellipse{
+    cursor: pointer;
     margin-bottom: 10px;
     border-radius: 100%;
     border: 5px solid var(--primary);
