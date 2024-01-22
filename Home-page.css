@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Philosopher:wght@700&display=swap');
+
+
+:root {
+    --primary: #21a6ff;
+}
+
+nav {
+    display: grid;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    align-items: center;
+    grid-template-columns: 306px auto 252px;
+    padding: 13px 103px;
+    column-gap: 15px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.logo {
+    justify-self: flex-start;
+    color: var(--primary);
+    font-size: 23px;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.quickaction {
+    grid-column: 3;
+    justify-self: center;
+    column-gap: 15px;
+}
+
+.action {
+    letter-spacing: 2px;
+    font-size: 9px;
+    row-gap: 3px;
+}
+
+.search {
+    height: 40px;
+    grid-row: 1/1;
+    grid-column: 2;
+    justify-self: flex-end;
+    border-radius: 6px;
+    border: 1px solid var(--primary);
+    column-gap: 5px;
+    padding-right: 5px;
+    background-color: var(--primary);
+}
+
+.search input {
+    outline: none;
+    border: none;
+    padding: 0px 9px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.banner{
+    height: 500px;
+    overflow-x: scroll;
+}
+
+.banner img{
+    object-fit: cover;
+    object-position: center center;
+}
+.catogary{
+    margin: 23px 143px;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.ellipse{
+    margin-bottom: 10px;
+    border-radius: 100%;
+    border: 5px solid var(--primary);
+    width: 170px;
+    height: 170px;
+}
+
+.ellipse img{
+    padding: 9px;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: inherit;
+}
+
+
+
+.heading{
+    color: #020e3f;
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 56px 0px;
+}
+
+.hsection{
+    flex-wrap: nowrap;
+    margin: 0px 143px;
+    column-gap: 45px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 180px;
+    max-width: 180px;
+    font-size: 11px;
+    font-weight: bold;
+    border: 1px solid rgb(131, 127, 127);
+    height: 260px;
+}
+
+.addtowishlist{
+    position: absolute;
+    z-index: 1;
+    padding: 5px;
+    background-color: rgba(235,235,235,0.9);
+    width: fit-content;
+    border-radius: 100%;
+    top: 9px;
+    right: 9px;
+}
+
+
+.prdtimg{
+    padding-top: 6px;
+    height: 190px;
+    object-fit: contain;
+}
+.prdtname{
+    font-size: large;
+    font-weight: bold;
+    padding: 9px;
+}
+.price{
+    top: 37px;
+    left: 7px;
+    padding: 9px;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.explore-more{
+    color: white;
+    background-color: rgba(33,166,255,0.9);
+    font-weight: bolder;
+    font-size: 14px;
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 50px;
+    margin: 55px 0px;
+}
+
