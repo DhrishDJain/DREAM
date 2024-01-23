@@ -1,19 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Philosopher:wght@700&display=swap');
-
-
-:root {
-    --primary: #21a6ff;
-}
 
 nav {
     display: grid;
+    grid-template-columns: 306px auto 252px;
     position: sticky;
     top: 0;
     z-index: 2;
     background-color: white;
     align-items: center;
-    grid-template-columns: 306px auto 252px;
-    padding: 13px 103px;
+    padding: 7px 103px;
     column-gap: 15px;
     border-bottom: 2px solid var(--primary);
 }
@@ -92,8 +86,7 @@ nav {
 
 
 .heading{
-    color: #020e3f;
-    position: relative;
+    color: hsl(228, 94%, 13%);
     font-size: 40px;
     text-align: center;
     text-transform: uppercase;
@@ -102,52 +95,69 @@ nav {
 }
 
 .hsection{
+    margin: 0px 150px;
     flex-wrap: nowrap;
-    margin: 0px 143px;
-    column-gap: 45px;
+    column-gap: 29px;
     overflow-x: scroll;
     overflow-y: hidden;
 }
+
 .item{
     display: flex;
-    flex-direction: column;
     position: relative;
-    min-width: 180px;
-    max-width: 180px;
-    font-size: 11px;
-    font-weight: bold;
+    flex-direction: column;
+    border-radius: 5px;
+    min-width: 240px;
+    max-width: 240px;
     border: 1px solid rgb(131, 127, 127);
-    height: 260px;
+    height: 360px;
+
 }
 
 .addtowishlist{
     position: absolute;
     z-index: 1;
     padding: 5px;
-    background-color: rgba(235,235,235,0.9);
+    background-color: rgba(235,235,235,0.1);
     width: fit-content;
+    box-shadow: 0px 0px 1px;
     border-radius: 100%;
     top: 9px;
     right: 9px;
 }
 
 
-.prdtimg{
+.prdtimg {
+    position: relative;
     padding-top: 6px;
-    height: 190px;
-    object-fit: contain;
+    height: 235px;
 }
 .prdtname{
+    position: relative;
     font-size: large;
     font-weight: bold;
-    padding: 9px;
+    top: 9px;
+    left: 7px; 
 }
 .price{
-    top: 37px;
-    left: 7px;
-    padding: 9px;
+    position: relative;
+    top: 12px;
+    left: 7px; 
     font-size: 22px;
     font-weight: bolder;
+}
+
+
+.addtocart{
+    margin-top: auto;
+    margin-bottom: 3px;
+    width: 96%;
+    height: 50px;
+    font-size: 10px;
+    color: white;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: var(--primary);
 }
 
 .explore-more{
@@ -159,6 +169,7 @@ nav {
     padding: 10px;
     border: 1px solid;
     border-radius: 50px;
-    margin: 55px 0px;
+    margin-top: 25px;
+    margin-bottom: 60px;
 }
 

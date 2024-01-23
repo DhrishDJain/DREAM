@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Philosopher:wght@700&display=swap');
+
+
+:root {
+    --primary: #21a6ff;
+}
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-*::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
 }
 
-* {
+body {
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
+} */
 .font{
     font-family: 'Montserrat', sans-serif;
 }
