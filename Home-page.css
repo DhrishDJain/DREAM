@@ -5,13 +5,26 @@ nav {
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     align-items: center;
     padding: 7px 103px;
     column-gap: 15px;
     border-bottom: 2px solid var(--primary);
 }
 
+li{
+    display: flex;
+    align-items: center;
+    font-weight:700;
+    column-gap: 11px;
+    padding: 8px 0px;
+}
+
+li:hover{
+    transform: scale(1.1);
+    text-decoration:underline;
+    text-decoration-thickness: 2.2px ;
+}
 .logo {
     justify-self: flex-start;
     color: var(--primary);
@@ -63,7 +76,7 @@ nav {
 .catogary{
     margin: 23px 143px;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-between !important;
     font-size: 12px;
 }
 
@@ -82,8 +95,6 @@ nav {
     min-height: 100%;
     border-radius: inherit;
 }
-
-
 
 .heading{
     color: hsl(228, 94%, 13%);
@@ -106,7 +117,7 @@ nav {
     display: flex;
     position: relative;
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: 0.2rem;
     min-width: 240px;
     max-width: 240px;
     border: 1px solid rgb(131, 127, 127);
@@ -156,7 +167,7 @@ nav {
     font-size: 10px;
     color: white;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: inherit;
     background-color: var(--primary);
 }
 
@@ -173,3 +184,45 @@ nav {
     margin-bottom: 60px;
 }
 
+.footer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 70px auto auto;
+    color: white;
+    background-color: var(--primary);
+    /* padding-left: 35px; */
+    align-content: center ;
+    justify-items: center;
+
+}
+
+.aboutus{
+    grid-column: 1;
+    grid-row: 2;
+}
+.Info{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.contactus{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.socialmedia{
+    grid-column: 2;
+    grid-row: 3;
+    margin: 75px 0px;
+    color: white;
+    font-size: 25px;
+    font-weight:bolder;
+    justify-self: stretch;
+}
+
+.sicon ul{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    padding: 20px 0px;
+}
