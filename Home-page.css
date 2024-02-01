@@ -1,39 +1,33 @@
 
 nav {
     display: grid;
-    grid-template-columns: 306px auto 252px;
     position: sticky;
+    grid-template-columns: 26vw 50vw 18vw;
     top: 0;
     z-index: 2;
-    background-color: rgb(255, 255, 255);
     align-items: center;
-    padding: 7px 103px;
+    justify-items: center;
+    padding: 18px 1vw;
     column-gap: 15px;
+    background-color: rgb(255, 255, 255);
     border-bottom: 2px solid var(--primary);
 }
 
-li{
-    display: flex;
-    align-items: center;
-    font-weight:700;
-    column-gap: 11px;
-    padding: 8px 0px;
-}
-
-li:hover{
-    transform: scale(1.1);
-    text-decoration:underline;
-    text-decoration-thickness: 2.2px ;
+.option{
+    display: none;
 }
 .logo {
-    justify-self: flex-start;
+    grid-column: 1;
+    /* justify-self: flex-start; */
     color: var(--primary);
-    font-size: 23px;
+    /* font-size: 23px; */
+    font-size: 1.2rem;
+    column-gap: 3px;
     font-family: 'Philosopher', sans-serif;
 }
 
 .quickaction {
-    grid-column: 3;
+    grid-column: 3/end;
     justify-self: center;
     column-gap: 15px;
 }
@@ -45,27 +39,29 @@ li:hover{
 }
 
 .search {
-    height: 40px;
-    grid-row: 1/1;
+    grid-row: 1;
     grid-column: 2;
-    justify-self: flex-end;
+    /* align-self: center; */
+    height: 45px;
+    width: 100%;
     border-radius: 6px;
-    border: 1px solid var(--primary);
-    column-gap: 5px;
-    padding-right: 5px;
+    border: 2px solid var(--primary);
     background-color: var(--primary);
 }
 
 .search input {
-    outline: none;
-    border: none;
     padding: 0px 9px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
 
+.search img {
+    padding: 4px;
+    margin: 0px 5px;
+}
+
 .banner{
-    height: 500px;
+    /* height: 500px; */
     overflow-x: scroll;
 }
 
@@ -74,10 +70,14 @@ li:hover{
     object-position: center center;
 }
 .catogary{
-    margin: 23px 143px;
+    margin: 23px 0vw;
     text-align: center;
-    justify-content: space-between !important;
-    font-size: 12px;
+    justify-content: space-around;
+    overflow-x: scroll;
+}
+
+.catogary h1{
+    font-size: 2rem;
 }
 
 .ellipse{
@@ -85,30 +85,31 @@ li:hover{
     margin-bottom: 10px;
     border-radius: 100%;
     border: 5px solid var(--primary);
-    width: 170px;
-    height: 170px;
+    width: 10rem;
+    height: 10rem;
 }
 
 .ellipse img{
-    padding: 9px;
+    padding: 0.5vw;
     min-width: 100%;
     min-height: 100%;
     border-radius: inherit;
 }
 
+
 .heading{
     color: hsl(228, 94%, 13%);
-    font-size: 40px;
+    font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin: 56px 0px;
+    margin: 4rem 0px;
 }
 
 .hsection{
-    margin: 0px 150px;
+    margin: 0px 11vw;
     flex-wrap: nowrap;
-    column-gap: 29px;
+    column-gap: 1.5rem;
     overflow-x: scroll;
     overflow-y: hidden;
 }
@@ -118,10 +119,10 @@ li:hover{
     position: relative;
     flex-direction: column;
     border-radius: 0.2rem;
-    min-width: 240px;
-    max-width: 240px;
+    min-width: 20vw;
+    max-width: 20vw;
+    height: 24rem;
     border: 1px solid rgb(131, 127, 127);
-    height: 360px;
 
 }
 
@@ -131,7 +132,7 @@ li:hover{
     padding: 5px;
     background-color: rgba(235,235,235,0.1);
     width: fit-content;
-    box-shadow: 0px 0px 1px;
+    box-shadow: 0px 0px 0.07rem;
     border-radius: 100%;
     top: 9px;
     right: 9px;
@@ -141,7 +142,7 @@ li:hover{
 .prdtimg {
     position: relative;
     padding-top: 6px;
-    height: 235px;
+    height: 16rem;
 }
 .prdtname{
     position: relative;
@@ -163,17 +164,15 @@ li:hover{
     margin-top: auto;
     margin-bottom: 3px;
     width: 96%;
-    height: 50px;
+    height: 3rem;
     font-size: 10px;
-    color: white;
     justify-content: center;
     border-radius: inherit;
+    color: white;
     background-color: var(--primary);
 }
 
 .explore-more{
-    color: white;
-    background-color: rgba(33,166,255,0.9);
     font-weight: bolder;
     font-size: 14px;
     width: fit-content;
@@ -182,47 +181,215 @@ li:hover{
     border-radius: 50px;
     margin-top: 25px;
     margin-bottom: 60px;
+    color: white;
+    background-color: rgba(33,166,255,0.9);
+}
+
+.budget{
+    display: grid;
+    grid-template-areas: "card1 card1 card2"
+                         "card1 card1 card3"
+                         "card4 card5 card5" ;
+    row-gap: 7px;
+    height: 25rem;
+    padding: 0px 9px;
+    column-gap: 7px;
+    color: white;
+}
+
+.budget-card{
+    display: flex;
+    border-radius: 7px;
+    font-size: 0.7rem;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border: 9px double #E5B80B;
+    background-color:  hsl(228, 94%, 13%);
+}
+
+.card1{
+    grid-area: card1;    
+}
+.card2{
+   grid-area: card2;
+}
+.card3{
+    grid-area: card3;
+}
+.card4{
+    grid-area: card4;
+}
+.card5{
+    grid-area: card5;
 }
 
 .footer{
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 70px auto auto;
+    grid-template-columns: unset;
+    grid-template-rows: auto auto;
+    padding-top: 8vh;
     color: white;
     background-color: var(--primary);
-    /* padding-left: 35px; */
-    align-content: center ;
-    justify-items: center;
-
 }
-
-.aboutus{
-    grid-column: 1;
-    grid-row: 2;
-}
-.Info{
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.contactus{
-    grid-column: 3;
-    grid-row: 2;
+ 
+.links{
+    grid-row: 7;
 }
 
 .socialmedia{
     grid-column: 2;
-    grid-row: 3;
-    margin: 75px 0px;
-    color: white;
-    font-size: 25px;
+    grid-row: 2;
+    margin: 7rem 0px;
+    font-size: 2rem;
     font-weight:bolder;
-    justify-self: stretch;
+    color: white;
 }
 
 .sicon ul{
     display: flex;
-    flex-direction: row !important;
-    justify-content: space-around !important;
+    justify-content: space-around;
     padding: 20px 0px;
+}
+
+@media screen and (max-width: 990px){
+
+    nav{
+        grid-template-columns: 12vw 65vw 20vw;
+        grid-template-rows: 3rem 3.5rem;
+        column-gap: 0px;
+        padding: 4px;
+        justify-content: flex-end;
+    }
+
+    
+    nav img {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .option{
+        display: block !important;
+    }
+
+    #acc{
+        display: none;
+    }
+
+    .logo {
+        grid-column: 2/3;
+        font-size: 0.9rem;
+    }
+
+    .logo img {
+        height: 3rem;
+        width: 3rem;
+    }
+    
+    .quickaction {
+        grid-column: 3/end;
+        column-gap: 8px;
+    }
+    
+    .search {
+        grid-row: 2;
+        grid-column: 1/end;
+        height: 45px;
+        width: 95%;
+        align-self: center;
+        border-radius: 6px;
+        border: 2px solid var(--primary);
+        background-color: var(--primary);
+    }
+    
+    .search input {
+        padding: 0px 9px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .search img {
+        padding: 4px;
+        margin: 0px 5px;
+    }
+
+    .banner{
+        object-fit: fill;
+        height: 30vh;
+    }
+    
+    .banner img{
+        height: 100%;
+    }
+
+    .catogary{
+        padding: 0px 15px;
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+    
+    .catogary h1{
+        font-size: 1rem;
+    }
+
+    .ellipse{
+        height: 6rem;
+        width: 6rem;
+        border: 0.2rem solid var(--primary);
+    }
+
+    
+    .heading{
+        margin-top: 2.8rem;
+        margin-bottom: 2rem;
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+    
+    .hsection{
+        margin-left: 0px;
+        margin-right: 0px;
+        column-gap: 0.5rem;
+        padding: 0px 2vw;
+    }
+
+    .item{
+        min-width: 12.5rem;
+        max-width: 12.5rem;
+        height: 20rem;
+    }
+     
+    .prdtimg{
+        height: 12rem;
+    }
+
+    .price{
+        font-size: 1.5rem;
+    }
+
+    .addtocart{
+        height: 2.5rem;
+    }
+
+
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        row-gap: 22px;
+        padding-top: 4vh;
+        justify-content: flex-start;
+    }
+    
+    .links{
+        padding-left: 3vw;
+        margin: 0px !important;
+    }
+
+    .socialmedia{
+        margin-top: 4vh;
+        margin-bottom: 0px;
+    }
+
+
 }

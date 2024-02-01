@@ -8,17 +8,20 @@
 * {
     margin: 0px;
     padding: 0px;
+    top: 0;
+    outline: none;
+    border: none;
     box-sizing: border-box;
 }
 
-/* body::-webkit-scrollbar {
+.catogary::-webkit-scrollbar {
     display: none;
 }
 
-body {
+.catogary {
     -ms-overflow-style: none;
     scrollbar-width: none;
-} */
+}
 .font{
     font-family: 'Montserrat', sans-serif;
 }
@@ -42,8 +45,8 @@ body {
 }
 
 .mcentreh{
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .start {
@@ -66,4 +69,18 @@ button{
 
 button:active{
     transform: scale(0.95);
+}
+
+li{
+    display: flex;
+    align-items: center;
+    font-weight:700;
+    column-gap: 11px;
+    padding: 8px 0px;
+}
+
+li:hover{
+    transform: scale(1.1);
+    text-decoration:underline;
+    text-decoration-thickness: 2.2px ;
 }
