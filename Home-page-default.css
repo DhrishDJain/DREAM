@@ -14,23 +14,43 @@
     box-sizing: border-box;
 }
 
-.catogary::-webkit-scrollbar {
+#posrel{
+    position: relative;
+}
+
+
+#posabso{
+    position: absolute; 
+     
+} 
+
+
+.catogary,.sec::-webkit-scrollbar {
     display: none;
 }
 
-.catogary {
+.catogary,.sec{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+
 .font{
     font-family: 'Montserrat', sans-serif;
 }
+
 .full-width {
     width: 100%;
 }
 
 .full-height {
     height: 100%;
+}
+
+.centre{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
 
 .centreh {
@@ -84,3 +104,4 @@ li:hover{
     text-decoration:underline;
     text-decoration-thickness: 2.2px ;
 }
+

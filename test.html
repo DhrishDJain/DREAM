@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose Gold Collection</title>
+    <!-- Add your stylesheet link -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.show-more {
+  cursor: pointer;
+}
+
+.card:hover .title {
+  opacity: 0;
+}
+
+.card:hover .description {
+  max-height: 10em;
+}
+    </style>
+</head>
+
+<body><div class="card">
+    <div class="content">
+      <h2 class="name">John Doe</h2>
+      <p class="description">Short paragraph about John Doe</p>
+    </div>
+  </div>
+</body>
+
+</html>
