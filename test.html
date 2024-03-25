@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose Gold Collection</title>
-    <!-- Add your stylesheet link -->
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-        .card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  position: relative;
-  transition: opacity 0.3s ease;
-}
-
-.hidden {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.title {
-  margin-bottom: 1rem;
-}
-
-.show-more {
-  cursor: pointer;
-}
-
-.card:hover .title {
-  opacity: 0;
-}
-
-.card:hover .description {
-  max-height: 10em;
-}
+      .retractable-content {
+        display: none;
+        margin-top: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-top: none;
+        background-color: #f9f9f9;
+      }
     </style>
-</head>
-
-<body><div class="card">
-    <div class="content">
-      <h2 class="name">John Doe</h2>
-      <p class="description">Short paragraph about John Doe</p>
+  </head>
+  <body>
+    <div class="retractable-header" data-retractable-id="1">Header 1</div>
+    <div id="retractable-content-1" class="retractable-content">
+      <p>Content for Header 1</p>
     </div>
-  </div>
-</body>
 
+    <div class="retractable-header" data-retractable-id="2">Header 2</div>
+    <div id="retractable-content-2" class="retractable-content">
+      <p>Content for Header 2</p>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const headers = document.querySelectorAll('.retractable-header');
+
+        headers.forEach((header) =>
+        {
+          header.addEventListener('click', () => 
+          {
+            const contentId = `retractable-content-${header.dataset.retractableId}`;
+            const content = document.getElementById(contentId);
+
+            if (content.style.display === 'none' || content.style.display === '')
+            {
+              content.style.display = 'block';
+            }
+            else {
+              content.style.display = 'none';
+            }
+          }
+          )
+        })
+       })
+    </script>
+  </body>
 </html>

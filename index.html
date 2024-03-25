@@ -1,446 +1,646 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAYANSHI</title>
+    <link rel="stylesheet" href="Home-page.css" />
+    <link rel="stylesheet" href="Home-page-default.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREAM</title>
-    <link rel="stylesheet" href="Home-page.css">
-    <link rel="stylesheet" href="Home-page-default.css">
-</head>
-
-<body>
+  <body>
     <nav class="full-width">
-        <div class="option">
-            <button>
-                <img src="icons/menu-burger.svg" alt="">
-            </button>
-        </div>
+      <div class="option">
+        <button>
+          <img src="icons/menu-burger.svg" alt="" />
+        </button>
+      </div>
 
+      <div class="logo centreh">
+        <h1>RAYANSHI</h1>
+        <img src="icons/logo.svg" alt="option" height="51px" />
+        <h1>JEWELS</h1>
+      </div>
 
-        <div class="logo centreh">
-            <h1>RAYANSHI</h1>
-            <img src="icons/logo.svg" alt="option" height="51px">
-            <h1>JEWELS</h1>
-        </div>
+      <div class="search centreh">
+        <input
+          class="full-width full-height"
+          type="text"
+          placeholder="Search"
+        />
+        <button>
+          <img src="icons/search.svg" alt="option" height="23px" />
+        </button>
+      </div>
 
-        <div class="search centreh">
-            <input class=" full-width full-height " type="text" placeholder="Search">
-            <button>
-                <img src="icons/search.svg" alt="option" height="23px">
-            </button>
-        </div>
+      <div class="quickaction centreh font">
+        <button class="action centrev" id="acc">
+          <img src="icons/account.svg" alt="option" height="30px" />
+          <h1>ACCOUNT</h1>
+        </button>
 
-        <div class="quickaction centreh font">
+        <button class="action centrev">
+          <img src="icons/wishlist/wishlist.svg" alt="option" height="30px" />
+          <h1 id="acc">WISHLIST</h1>
+        </button>
 
-            <button class="action centrev" id="acc">
-                <img src="icons/account.svg" alt="option" height="30px">
-                <h1>ACCOUNT</h1>
-            </button>
-
-            <button class="action centrev">
-                <img src="icons/wishlist/wishlist.svg" alt="option" height="30px">
-                <h1 id="acc">WISHLIST</h1>
-            </button>
-
-            <button class="action centrev">
-                <img src="icons/cart.svg" alt="option" height="30px">
-                <h1 id="acc">CART</h1>
-            </button>
-
-        </div>
+        <button class="action centrev">
+          <img src="icons/cart.svg" alt="option" height="30px" />
+          <h1 id="acc">CART</h1>
+        </button>
+      </div>
     </nav>
 
     <div class="banner centreh full-width">
-        <div style="scroll-snap-align: center;">
-            <img src="//www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=3840"
-                alt=""
-                srcset="//www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=375 375w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=550 550w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=750 750w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=1100 1100w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=1500 1500w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=1780 1780w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=2000 2000w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=3000 3000w, //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=3840 3840w">
-        </div>
-        <div style="scroll-snap-align: center;">
-
-            <img src="//www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=3840"
-                alt=""
-                srcset="//www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=375 375w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=550 550w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=750 750w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=1100 1100w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=1500 1500w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=1780 1780w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=2000 2000w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=3000 3000w, //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=3840 3840w">
-        </div>
+      <div style="scroll-snap-align: center">
+        <img
+          src="//www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=3840"
+          alt=""
+          srcset="
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=375   375w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=550   550w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=750   750w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=1100 1100w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=1500 1500w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=1780 1780w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=2000 2000w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=3000 3000w,
+            //www.giva.co/cdn/shop/files/Personalised_Hero_phone_Web_-min.jpg?v=1705386546&amp;width=3840 3840w
+          "
+        />
+      </div>
+      <div style="scroll-snap-align: center">
+        <img
+          src="//www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=3840"
+          alt=""
+          srcset="
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=375   375w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=550   550w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=750   750w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=1100 1100w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=1500 1500w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=1780 1780w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=2000 2000w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=3000 3000w,
+            //www.giva.co/cdn/shop/files/Red_Ronance_Gold_Bnr_Hero_Web_1920x600-min.jpg?v=1705391884&amp;width=3840 3840w
+          "
+        />
+      </div>
     </div>
 
     <div class="catogary centreh font">
+      <button class="centrev">
+        <div class="ellipse centrev">
+          <img src="icons/catogary/pendent.jpeg" alt="" height="50px" />
+        </div>
+        <h1>PENDENT</h1>
+      </button>
 
-        <button class="centrev">
-            <div class="ellipse centrev">
-                <img src="icons/catogary/pendent.jpeg" alt="" height="50px">
-            </div>
-            <h1>PENDENT</h1>
-        </button>
+      <button class="centrev">
+        <div class="ellipse centrev">
+          <img src="icons/catogary/ring.png" height="50px" />
+        </div>
+        <h1>RING</h1>
+      </button>
 
-        <button class="centrev">
-            <div class="ellipse centrev">
-                <img src="icons/catogary/ring.png" height="50px">
-            </div>
-            <h1>RING</h1>
-        </button>
+      <button class="centrev">
+        <div class="ellipse centrev">
+          <img src="icons/catogary/bracelet.png" alt="" height="50px" />
+        </div>
+        <h1>BRACELET</h1>
+      </button>
 
-        <button class="centrev">
-            <div class="ellipse centrev">
-                <img src="icons/catogary/bracelet.png" alt="" height="50px">
-            </div>
-            <h1>BRACELET</h1>
-        </button>
-
-        <button class="centrev">
-            <div class="ellipse centrev">
-                <img src="icons/catogary/necklace.png" alt="" height="50px">
-            </div>
-            <h1>NECKLACE</h1>
-        </button>
-
+      <button class="centrev">
+        <div class="ellipse centrev">
+          <img src="icons/catogary/necklace.png" alt="" height="50px" />
+        </div>
+        <h1>NECKLACE</h1>
+      </button>
     </div>
 
     <div class="itemarea">
-        <h1 class="heading font">TRENDING</h1>
-        <div class="hsection centreh">
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-                    <img src="product/product.png" alt="" height="100%" width="95%">
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 7,999</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
+      <h1 class="heading font">TRENDING</h1>
+      <div class="hsection centreh">
+        <div class="item centrev font">
+          <div class="prdtimg centrev">
+            <img src="product/product.png" alt="" height="100%" width="95%" />
+          </div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
             </div>
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 5,999</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
-            </div>
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-                    <img src="product/product2.jpeg" alt="" height="100%" width="95%">
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 1,999</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
-            </div>
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-                    <img src="product/product3.png" alt="" height="100%" width="95%">
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 10,000</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
-            </div>
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-                    <img src="product/product4.png" alt="" height="100%" width="95%">
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 1,999</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
-            </div>
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-                    <img src="product/product.png" alt="" height="100%" width="95%">
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 4,999</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
-            </div>
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-                    <img src="product/product1.jpeg" alt="" height="100%" width="95%">
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 1,100</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
-            </div>
-            <div class="item centrev font">
-                <div class="prdtimg centrev">
-                    <img src="product/product2.jpeg" alt="" height="100%" width="95%">
-                </div>
-                <div title="Like" class="heart-container">
-                    <input id="Give-It-An-Id" class="checkbox" type="checkbox">
-                    <div class="svg-container">
-                        <img class="svg-outline" src="icons/wishlist/wishlistbtn.svg" alt="" height="18px" width="18px">
-                        <img class="svg-filled" src="icons/wishlist/wishlistbtn(a).svg" alt="" height="18px"
-                            width="18px">
-                    </div>
-                </div>
-                <span class="prdtname">Lorem ipsum</span>
-                <span class="price">₹ 8,999</span>
-                <button class="addtocart mcentreh font">
-                    <h1>Add to Cart</h1>
-                </button>
-            </div>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 7,999</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
         </div>
-        <button class="mcentreh explore-more">
-            <span>EXPLORE ALL</span>
-            <img src="icons/explore-more.svg" alt="" height="20px">
-        </button>
-
-        <section class="yue font">
-            <div class="head centrev">
-                <h1 style="grid-area: head;" class=" font">Your Unique Expression</h1>
-                <button class="mcentreh">
-                    <span class="mcentreh">EXPLORE</span>
-                </button>
+        <div class="item centrev font">
+          <div class="prdtimg centrev"></div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
             </div>
-
-            <div style="grid-area: sec1;" class="sec hsection centreh">
-                <div class="expression centreh centre">
-                    <h3 style="isolation: isolate;">Princess Necklace</h3>
-                    <div class="descrp font">
-                        <h2 style="isolation: isolate;">prdname</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus ullam id corporis
-                            illum odio!</p>
-                    </div>
-                </div>
-                <div class="expression centreh centre">
-                    <h3 style="isolation: isolate;">Kada</h3>
-                    <div class="descrp font">
-                        <h2 style="isolation: isolate;">prdname</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus ullam id corporis
-                            illum odio!</p>
-                    </div>
-                </div>
-
-                <div class="expression centreh centre">
-                    <h3 style="isolation: isolate;">Bracelet Watch</h3>
-                    <div class="descrp font">
-                        <h2 style="isolation: isolate;">prdname</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus ullam id corporis
-                            illum odio!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="grid-area: sec2;" class="sec hsection centreh">
-                <div class="expression centreh centre">
-                    <h3 style="isolation: isolate;">Cocktail Ring</h3>
-                    <div class="descrp font">
-                        <h2 style="isolation: isolate;">prdname</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus ullam id corporis
-                            illum odio!</p>
-                    </div>
-                </div>
-
-                <div class="expression centreh centre">
-                    <h3 style="isolation: isolate;">Kundan Ring</h3>
-                    <div class="descrp font">
-                        <h2 style="isolation: isolate;">prdname</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus ullam id corporis
-                            illum odio!</p>
-                    </div>
-                </div>
-
-                <div class="expression centreh centre">
-                    <h3 style="isolation: isolate;">Bracelet</h3>
-                    <div class="descrp font">
-                        <h2 style="isolation: isolate;">prdname</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi accusamus ullam id corporis
-                            illum odio!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <h1 class="heading font">Shop by Occasion</h1>
-        <div class="occasion-container">
-            <div class="occasion o1 font centreh centre full-height full-width">
-                <h3 style="isolation: isolate;">Weddings</h3>
-            </div>
-            <div class="occasion o2 font centreh centre full-height full-width">
-                <h3 style="isolation: isolate;">Anniversaries</h3>
-
-            </div>
-            <div class="occasion o3 font centreh centre full-height full-width">
-                <h3 style="isolation: isolate;">Birthdays</h3>
-
-            </div>
-            <div class="occasion o4 font centreh centre full-height full-width">
-                <h3 style="isolation: isolate;">Casual Wear</h3>
-
-            </div>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 5,999</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
         </div>
-
-        <h1 class="heading font">Glam on a Budget</h1>
-        <div class="budget font">
-
-            <div class="budget-card full-height full-width card1">
-                <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg1.jpeg" alt=""> -->
-                <h1>UNDER <br> ₹5000</h1>
+        <div class="item centrev font">
+          <div class="prdtimg centrev">
+            <img src="product/product2.jpeg" alt="" height="100%" width="95%" />
+          </div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
             </div>
-
-            <div class="budget-card full-height full-width card2">
-                <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg2.jpeg" alt=""> -->
-                <h1>UNDER <br> ₹10,000</h1>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 1,999</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
+        </div>
+        <div class="item centrev font">
+          <div class="prdtimg centrev">
+            <img src="product/product3.png" alt="" height="100%" width="95%" />
+          </div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
             </div>
-
-            <div class="budget-card full-height full-width card3">
-                <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg3.jpeg" alt=""> -->
-                <h1>UNDER <br> ₹15,000</h1>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 10,000</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
+        </div>
+        <div class="item centrev font">
+          <div class="prdtimg centrev">
+            <img src="product/product4.png" alt="" height="100%" width="95%" />
+          </div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
             </div>
-
-            <div class="budget-card full-height full-width card4">
-                <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg4.jpeg" alt=""> -->
-                <h1>UNDER <br> ₹20,000</h1>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 1,999</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
+        </div>
+        <div class="item centrev font">
+          <div class="prdtimg centrev">
+            <img src="product/product.png" alt="" height="100%" width="95%" />
+          </div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
             </div>
-
-            <div class="budget-card full-height full-width card5">
-                <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg5.jpeg" alt=""> -->
-                <h1>₹20,000 +</h1>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 4,999</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
+        </div>
+        <div class="item centrev font">
+          <div class="prdtimg centrev">
+            <img src="product/product1.jpeg" alt="" height="100%" width="95%" />
+          </div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
             </div>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 1,100</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
+        </div>
+        <div class="item centrev font">
+          <div class="prdtimg centrev">
+            <img src="product/product2.jpeg" alt="" height="100%" width="95%" />
+          </div>
+          <div title="Like" class="heart-container">
+            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+            <div class="svg-container">
+              <img
+                class="svg-outline"
+                src="icons/wishlist/wishlistbtn.svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+              <img
+                class="svg-filled"
+                src="icons/wishlist/wishlistbtn(a).svg"
+                alt=""
+                height="18px"
+                width="18px"
+              />
+            </div>
+          </div>
+          <span class="prdtname">Lorem ipsum</span>
+          <span class="price">₹ 8,999</span>
+          <button class="addtocart mcentreh font">
+            <h1>Add to Cart</h1>
+          </button>
+        </div>
+      </div>
+      <button class="mcentreh explore-more">
+        <span>EXPLORE ALL</span>
+        <img src="icons/explore-more.svg" alt="" height="20px" />
+      </button>
 
+      <section class="yue font">
+        <div class="head centrev">
+          <h1 style="grid-area: head" class="font">Your Unique Expression</h1>
+          <button class="mcentreh">
+            <span class="mcentreh">EXPLORE</span>
+          </button>
         </div>
 
-
-        <h1 class="heading font">gift ideas</h1>
-        <div class="hsection centreh">
-            <div class="gift G1 font centreh centre">
-                <h3 style="isolation: isolate;">Family</h3>
+        <div style="grid-area: sec1" class="sec centreh">
+          <div class="expression centreh centre">
+            <h2 class="exphead" style="isolation: isolate">
+              Princess Necklace
+            </h2>
+            <div class="descrp font">
+              <h2 style="isolation: isolate">Princess Necklace</h2>
+              <p>
+                Lorem ipsum dolor slkit amet consectetur adipisicing elit.
+                Commodi accusamus ullam id corporisillum odio!
+              </p>
             </div>
-            <div class="gift G2 font centreh centre">
-                <h3 style="isolation: isolate;">Friends</h3>
+            <h3 class="descrpbtu">Want to know why ?</h3>
+          </div>
 
+          <div class="expression centreh centre">
+            <h2 class="exphead" style="isolation: isolate">Kada</h2>
+            <div class="descrp font">
+              <h2 style="isolation: isolate">Kada</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                accusamus ullam id corporis illum odio!
+              </p>
             </div>
-            <div class="gift G3 font centreh centre">
-                <h3 style="isolation: isolate;">Most Gifted</h3>
+            <h3 class="descrpbtu">Want to know why ?</h3>
+          </div>
 
+          <div class="expression centreh centre">
+            <h2 class="exphead" style="isolation: isolate">Bracelet Watch</h2>
+            <div class="descrp font">
+              <h2 style="isolation: isolate">Bracelet Watch</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                accusamus ullam id corporis illum odio!
+              </p>
             </div>
-            <div class="gift G3 font centreh centre">
-                <h3 style="isolation: isolate;">Sister/Mom</h3>
-
-            </div>
-            <div class="gift G4 font centreh centre">
-                <h3 style="isolation: isolate;">Her</h3>
-
-            </div>
+            <h3 class="descrpbtu">Want to know why ?</h3>
+          </div>
         </div>
+
+        <div style="grid-area: sec2" class="sec centreh">
+          <div class="expression centreh centre">
+            <h2 class="exphead" style="isolation: isolate">Cocktail Ring</h2>
+            <div class="descrp font">
+              <h2 style="isolation: isolate">Cocktail Ring</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                accusamus ullam id corporis illum odio!
+              </p>
+            </div>
+            <h3 class="descrpbtu">Want to know why ?</h3>
+          </div>
+
+          <div class="expression centreh centre">
+            <h2 class="exphead" style="isolation: isolate">Kundan Ring</h2>
+            <div class="descrp font">
+              <h2 style="isolation: isolate">Kundan Ring</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                accusamus ullam id corporis illum odio!
+              </p>
+            </div>
+            <h3 class="descrpbtu">Want to know why ?</h3>
+          </div>
+
+          <div class="expression centreh centre">
+            <h2 class="exphead" style="isolation: isolate">Bracelet</h2>
+            <div class=" descrp font">
+              <h2 style="isolation: isolate">Bracelet</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                accusamus ullam id corporis illum odio!
+              </p>
+            </div>
+            <h3 class="descrpbtu">Want to know why ?</h3>
+          </div>
+        </div>
+        <script>
+          const toggleBtns = document.querySelectorAll(".descrpbtu");
+          const exphead = document.querySelectorAll(".exphead");
+          const retractableDivs = document.querySelectorAll(".descrp");
+
+          toggleBtns.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+              retractableDivs.forEach((div) => {
+                if (div !== retractableDivs[index]) {
+                  div.classList.remove("expanded");
+                }
+              });
+              exphead.forEach((div) => {
+                if (div !== exphead[index]) {
+                  div.classList.remove("expanded");
+                }
+              });
+
+              retractableDivs[index].classList.toggle("expanded");
+              exphead[index].classList.toggle("expanded");
+            });
+          });
+        </script>
+      </section>
+
+      <h1 class="heading font">Shop by Occasion</h1>
+      <div class="occasion-container">
+        <div class="occasion o1 font centreh centre full-height full-width">
+          <h3 style="isolation: isolate">Weddings</h3>
+        </div>
+        <div class="occasion o2 font centreh centre full-height full-width">
+          <h3 style="isolation: isolate">Anniversaries</h3>
+        </div>
+        <div class="occasion o3 font centreh centre full-height full-width">
+          <h3 style="isolation: isolate">Birthdays</h3>
+        </div>
+        <div class="occasion o4 font centreh centre full-height full-width">
+          <h3 style="isolation: isolate">Casual Wear</h3>
+        </div>
+      </div>
+
+      <h1 class="heading font">Glam on a Budget</h1>
+      <div class="budget font">
+        <div style=" grid-area: card1;" class="budget-card full-height full-width card1">
+          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg1.jpeg" alt=""> -->
+          <h1>
+            UNDER <br />
+            ₹5000
+          </h1>
+        </div>
+
+        <div style=" grid-area: card2;" class="budget-card full-height full-width card2">
+          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg2.jpeg" alt=""> -->
+          <h1>
+            UNDER <br />
+            ₹10,000
+          </h1>
+        </div>
+
+        <div style=" grid-area: card3;" class="budget-card full-height full-width card3">
+          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg3.jpeg" alt=""> -->
+          <h1>
+            UNDER <br />
+            ₹15,000
+          </h1>
+        </div>
+
+        <div style=" grid-area: card4;" class="budget-card full-height full-width card4">
+          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg4.jpeg" alt=""> -->
+          <h1>
+            UNDER <br />
+            ₹20,000
+          </h1>
+        </div>
+
+        <div style=" grid-area: card5;" class="budget-card full-height full-width card5">
+          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg5.jpeg" alt=""> -->
+          <h1>₹20,000 +</h1>
+        </div>
+      </div>
+
+      <h1 class="heading font">gift ideas</h1>
+      <div class="hsection centreh">
+        <div class="gift G1 font centreh centre">
+          <h3 style="isolation: isolate">Family</h3>
+        </div>
+        <div class="gift G2 font centreh centre">
+          <h3 style="isolation: isolate">Friends</h3>
+        </div>
+        <div class="gift G3 font centreh centre">
+          <h3 style="isolation: isolate">Most Gifted</h3>
+        </div>
+        <div class="gift G3 font centreh centre">
+          <h3 style="isolation: isolate">Sister/Mom</h3>
+        </div>
+        <div class="gift G4 font centreh centre">
+          <h3 style="isolation: isolate">Her</h3>
+        </div>
+      </div>
     </div>
-
 
     <div class="footer">
-        <div class="mcentreh links font">
-            <h1>Contact Us</h1>
-            <ul>
-                <li> <img src="icons/contact us/mail.svg" alt="" height="40px" width="40px"> <span>Reach Us via
-                        Mail</span></li>
-                <li><img src="icons/contact us/call.svg" alt="" height="40px" width="40px"> <span>1870-266-0956</span>
-                </li>
-                <li><img src="icons/contact us/chat.svg" alt="" height="40px" width="40px"><span>Chat with Us</span>
-                </li>
-            </ul>
+      <div class="mcentreh links font">
+        <h1>Contact Us</h1>
+        <ul>
+          <li>
+            <img
+              src="icons/contact us/mail.svg"
+              alt=""
+              height="40px"
+              width="40px"
+            />
+            <span>Reach Us via Mail</span>
+          </li>
+          <li>
+            <img
+              src="icons/contact us/call.svg"
+              alt=""
+              height="40px"
+              width="40px"
+            />
+            <span>1870-266-0956</span>
+          </li>
+          <li>
+            <img
+              src="icons/contact us/chat.svg"
+              alt=""
+              height="40px"
+              width="40px"
+            /><span>Chat with Us</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mcentreh links font">
+        <h1>Info</h1>
+        <ul>
+          <li><span>FAQs & Support</span></li>
+          <li><span>Shipping & Returns</span></li>
+          <li><span>Privacy Policy</span></li>
+        </ul>
+      </div>
+
+      <div class="mcentreh links font">
+        <h1>About Us</h1>
+        <ul>
+          <li><span>Our Blogs</span></li>
+          <li><span>Customer Reviews</span></li>
+        </ul>
+      </div>
+
+      <div class="socialmedia">
+        <span class="centrev font">Follow Us :</span>
+
+        <div class="sicon">
+          <ul>
+            <li>
+              <button>
+                <img
+                  src="icons/socialmedia/facebook.svg"
+                  alt=""
+                  height="40px"
+                  width="40px"
+                />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img
+                  src="icons/socialmedia/instagram.svg"
+                  alt=""
+                  height="40px"
+                  width="40px"
+                />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img
+                  src="icons/socialmedia/threads.svg"
+                  alt=""
+                  height="40px"
+                  width="40px"
+                />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img
+                  src="icons/socialmedia/linkedin.svg"
+                  alt=""
+                  height="40px"
+                  width="40px"
+                />
+              </button>
+            </li>
+          </ul>
         </div>
-
-        <div class="mcentreh links font">
-            <h1>Info</h1>
-            <ul>
-                <li><span>FAQs & Support</span></li>
-                <li><span>Shipping & Returns</span></li>
-                <li><span>Privacy Policy</span></li>
-            </ul>
-        </div>
-
-        <div class="mcentreh links font">
-            <h1>About Us</h1>
-            <ul>
-                <li><span>Our Blogs</span></li>
-                <li><span>Customer Reviews</span></li>
-            </ul>
-        </div>
-
-        <div class="socialmedia">
-
-            <span class="centrev font">Follow Us :</span>
-
-            <div class="sicon">
-                <ul>
-                    <li><button><img src="icons/socialmedia/facebook.svg" alt="" height="40px" width="40px"></button>
-                    </li>
-                    <li><button><img src="icons/socialmedia/instagram.svg" alt="" height="40px" width="40px"></button>
-                    </li>
-                    <li><button><img src="icons/socialmedia/threads.svg" alt="" height="40px" width="40px"></button>
-                    </li>
-                    <li><button><img src="icons/socialmedia/linkedin.svg" alt="" height="40px" width="40px"></button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
