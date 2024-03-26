@@ -61,7 +61,7 @@ nav {
 }
 
 .banner {
-  /* height: 500px; */
+  /* height: 32vh; */
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
@@ -263,30 +263,33 @@ nav {
   flex-wrap: nowrap;
   min-height: 15rem;
 }
-.descrp {
-  display: none;
-  background-color: rgba(247, 247, 247, 0.247);
-  overflow: hidden;
-  transition: max-height 0.1s ease;
-}
 .expression {
   position: relative;
   min-width: 30rem;
-  min-height: 15rem;
+  min-height: 16rem;
+  max-height: 16rem;
   border-radius: 15px;
   color: #ffffff;
   background-color: #000000;
+}
+.descrp {
+  background-color: rgba(247, 247, 247, 0.247);
+  min-height: 0px;
+  width: 0px;
+  overflow: hidden;
 }
 
 .descrp.expanded {
   display: inline-block;
   min-height: inherit;
-  min-width: 17rem;
+  min-width: 30rem;
   border-radius: 10px;
+  transition: min-height 0.4s ease;
 }
 
-.descrp.expanded h2,p{
-    padding: 10px;
+.descrp.expanded h2,
+p {
+  padding: 15px;
 }
 
 .exphead.expanded {
@@ -392,14 +395,34 @@ nav {
   border: 9px double #e5b80b;
   background-color: hsl(228, 94%, 13%);
 }
-
-.gift {
-  height: 20rem;
-  background-color: black;
+.gsec {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 20rem;
+  gap: 9px;
+  margin: 20px 0;
+  justify-content: center;
+}
+.box {
+  text-align: center;
+  display: flex;
+  position: relative;
+  height: 15rem;
+  width: 15rem;
+}
+.box img {
+  height: 100%;
+  width: 100%;
+}
+.box h2 {
+  position: absolute;
+  letter-spacing: 3px;
   color: white;
-  flex: 1 0 400px;
-  font-size: 2rem;
-  border-radius: 8%;
+  margin: auto;
+  inset: 0px;
+  bottom: -100px;
+  height: 0;
+  align-self: center;
 }
 
 .footer {
@@ -496,16 +519,17 @@ nav {
   }
 
   .banner {
-    object-fit: fill;
-    height: 30vh;
+    object-fit: contain;
+    min-height: 15rem;
   }
 
   .banner img {
-    height: 100%;
+    min-height: 15rem;
   }
 
   .catogary {
     padding: 0px 15px;
+
     justify-content: space-between;
     column-gap: 20px;
   }
@@ -572,11 +596,11 @@ nav {
     height: 17.8rem;
   }
 
-  .expression{
+  .expression {
     min-width: 17rem;
     text-align: center;
   }
-  .descrpbtu{
+  .descrpbtu {
     bottom: 0;
   }
   .head {
@@ -610,7 +634,13 @@ nav {
   .budget-card {
     max-width: 100%;
   }
-
+  .box {
+    height: 11rem;
+    width: 11rem;
+  }
+  .box h2 {
+    bottom: -45px;
+  }
   .footer {
     display: flex;
     flex-direction: column;

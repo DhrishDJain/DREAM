@@ -25,15 +25,14 @@
 } 
 
 
-.catogary::-webkit-scrollbar {
+.catogary,.gsec::-webkit-scrollbar {
     display: none;
 }
 
-.catogary,.sec{
+.catogary,.gsec,.sec{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
 
 .font{
     font-family: 'Montserrat', sans-serif;
