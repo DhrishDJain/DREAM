@@ -73,16 +73,37 @@ nav {
 }
 
 .catogary {
+  /* position: relative; */
   margin: 23px 0vw;
   text-align: center;
+  height: 15rem;
   justify-content: space-around;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .catogary h1 {
   font-size: 2rem;
 }
+.btncontainer{
+  display: flex;
 
+  border: 1px solid black;
+}
+.Btn {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  background-color: rgb(9, 129, 241);
+  padding: 8px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+.arrow path {
+  fill: rgb(255, 255, 255);
+}
 .ellipse {
   cursor: pointer;
   margin-bottom: 10px;
@@ -110,8 +131,8 @@ nav {
 }
 
 .hsection {
-  /* position: absolute; */
   margin: 0px 0.7vw;
+  height: 26rem;
   flex-wrap: nowrap;
   column-gap: 1.5rem;
   overflow-x: scroll;
@@ -203,7 +224,7 @@ nav {
 
 .addtocart {
   margin-top: auto;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   width: 96%;
   height: 3rem;
   font-size: 10px;
@@ -529,9 +550,11 @@ p {
 
   .catogary {
     padding: 0px 15px;
-
-    justify-content: space-between;
-    column-gap: 20px;
+    justify-content: flex-start;
+    margin: 0px;
+    position: relative;
+    height: 9rem;
+    column-gap: 9%;
   }
 
   .catogary h1 {
@@ -569,6 +592,7 @@ p {
     margin-right: 0px;
     column-gap: 0.5rem;
     padding: 0px 2vw;
+    height: 21rem;
   }
 
   .item {
@@ -602,6 +626,10 @@ p {
   }
   .descrpbtu {
     bottom: 0;
+  }
+  .descrp.expanded {
+    min-width: 18rem;
+    justify-self: center;
   }
   .head {
     margin: 8px;

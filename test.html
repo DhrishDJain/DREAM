@@ -5,49 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .retractable-content {
-        display: none;
-        margin-top: 5px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-top: none;
-        background-color: #f9f9f9;
-      }
+.horizontal-section {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  column-gap: 30px;
+
+}
+
+.item{
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  padding-left: 50px;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
     </style>
   </head>
   <body>
-    <div class="retractable-header" data-retractable-id="1">Header 1</div>
-    <div id="retractable-content-1" class="retractable-content">
-      <p>Content for Header 1</p>
+    <div class="horizontal-section">
+    <div class="scroll-button left">&lt;</div>
+    <div class="content">
+      <!-- Your content here -->
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <!-- Add more items as needed -->
+      </div>
     </div>
-
-    <div class="retractable-header" data-retractable-id="2">Header 2</div>
-    <div id="retractable-content-2" class="retractable-content">
-      <p>Content for Header 2</p>
-    </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const headers = document.querySelectorAll('.retractable-header');
-
-        headers.forEach((header) =>
-        {
-          header.addEventListener('click', () => 
-          {
-            const contentId = `retractable-content-${header.dataset.retractableId}`;
-            const content = document.getElementById(contentId);
-
-            if (content.style.display === 'none' || content.style.display === '')
-            {
-              content.style.display = 'block';
-            }
-            else {
-              content.style.display = 'none';
-            }
-          }
-          )
-        })
-       })
-    </script>
+    <div class="scroll-button right">&gt;</div>
+  <!-- </div> -->
   </body>
 </html>
