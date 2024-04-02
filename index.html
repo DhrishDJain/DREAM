@@ -147,21 +147,20 @@
     <script>
       const scrollImages = document.querySelector(".catogary");
       const scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
-      console.log(scrollImages.scrollWidth)
+      console.log(scrollImages.scrollWidth);
       const leftButton = document.querySelector(".btn-left");
       const rightButton = document.querySelector(".btn-right");
 
       leftButton.addEventListener("click", () => {
         scrollImages.scrollLeft -= scrollImages.clientWidth;
-        console.log(scrollImages.scrollLeft)
+        console.log(scrollImages.scrollLeft);
       });
-      
+
       rightButton.addEventListener("click", () => {
-        
         scrollImages.scrollLeft += scrollImages.clientWidth;
-        console.log(scrollImages.scrollLeft)
+        console.log(scrollImages.scrollLeft);
       });
-      scrollImages.addEventListener("scroll",() => {
+      scrollImages.addEventListener("scroll", () => {
         if (scrollImages.scrollLeft === 104 || scrollImages.scrollLeft === 0) {
           leftButton.style.display = "none";
           rightButton.style.display = "flex";
@@ -172,7 +171,6 @@
       });
 
       leftButton.style.display = "none";
-      
     </script>
 
     <div class="itemarea">
@@ -546,7 +544,6 @@
           style="grid-area: card1"
           class="budget-card full-height full-width card1"
         >
-          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg1.jpeg" alt=""> -->
           <h1>
             UNDER <br />
             ₹5000
@@ -557,7 +554,6 @@
           style="grid-area: card2"
           class="budget-card full-height full-width card2"
         >
-          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg2.jpeg" alt=""> -->
           <h1>
             UNDER <br />
             ₹10,000
@@ -568,7 +564,6 @@
           style="grid-area: card3"
           class="budget-card full-height full-width card3"
         >
-          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg3.jpeg" alt=""> -->
           <h1>
             UNDER <br />
             ₹15,000
@@ -579,7 +574,6 @@
           style="grid-area: card4"
           class="budget-card full-height full-width card4"
         >
-          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg4.jpeg" alt=""> -->
           <h1>
             UNDER <br />
             ₹20,000
@@ -590,26 +584,25 @@
           style="grid-area: card5"
           class="budget-card full-height full-width card5"
         >
-          <!-- <img class="full-height full-width" src="icons/budget-bg/budget-bg5.jpeg" alt=""> -->
           <h1>₹20,000 +</h1>
         </div>
       </div>
 
       <h1 style="margin-bottom: 0" class="heading font">rayanshi gift guide</h1>
-      <div class="gsec centreh">
-        <div class="box">
+      <div class="gsec centre">
+        <div style="grid-column: 1; grid-row: 1;" class="box">
           <img src="icons/gift-box.png" alt="" />
           <h2 class="font">Mom</h2>
         </div>
-        <div class="box">
+        <div style="grid-column: 2; grid-row: 1;" class="box">
           <img src="icons/gift-box.png" alt="" />
           <h2 class="font">Sister</h2>
         </div>
-        <div class="box">
+        <div style="grid-column: 1; grid-row: 2;" class="box">
           <img src="icons/gift-box.png" alt="" />
           <h2 class="font">Friends</h2>
         </div>
-        <div class="box">
+        <div style="grid-column: 2; grid-row: 2;" class="box">
           <img src="icons/gift-box.png" alt="" />
           <h2 class="font">GF</h2>
         </div>
