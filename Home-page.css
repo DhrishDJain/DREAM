@@ -405,9 +405,9 @@ p {
 .gsec {
   display: flex;
   flex-wrap: wrap;
-  min-height: 20rem;
+  min-height: 12rem;
   gap: 9px;
-  margin: 20px 0;
+  margin: 5vw 0;
   justify-content: center;
 }
 .box {
