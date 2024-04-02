@@ -85,25 +85,11 @@ nav {
 .catogary h1 {
   font-size: 2rem;
 }
-.btncontainer{
-  display: flex;
 
-  border: 1px solid black;
-}
 .Btn {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  background-color: rgb(9, 129, 241);
-  padding: 8px;
-  border-radius: 100%;
-  cursor: pointer;
-  border: none;
+  display: none;
 }
 
-.arrow path {
-  fill: rgb(255, 255, 255);
-}
 .ellipse {
   cursor: pointer;
   margin-bottom: 10px;
@@ -549,16 +535,30 @@ p {
   }
 
   .catogary {
-    padding: 0px 15px;
-    justify-content: flex-start;
+    padding: 0px 4vw;
     margin: 0px;
-    position: relative;
     height: 9rem;
+    min-width: 100%;
     column-gap: 9%;
+    justify-content: space-between;
+    scroll-behavior: smooth;
   }
-
   .catogary h1 {
     font-size: 1rem;
+  }
+
+  .Btn {
+    display: flex;
+    position: absolute;
+    min-width: 2.3rem;
+    height: 2.3rem;
+    top: 30%;
+    z-index: 1;
+    background-color: rgb(9, 129, 241);
+    padding: 8px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
   }
 
   .ellipse {
