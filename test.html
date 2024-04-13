@@ -1,115 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <style>
-      .scroll-container {
+      .container {
         position: relative;
-        overflow: scroll;
-
+        width: 100vw;
+        background-color: aqua;
       }
 
-      .scroll-content {
-        display: flex;
-        column-gap: 100px;
-        transition: transform 0.25s ease-out;
-      }
-      .card {
-        border: 2px solid;
-        min-width: 200px;
-      }
-      .scroll-left,
-      .scroll-right {
+      .div1 {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 10px;
-        background-color: #f2f2f2;
-        border: none;
-        cursor: pointer;
+        width: 50%;
+        height: 100px;
+        background-color: red;
       }
 
-      .scroll-left {
-        left: 0;
-      }
-
-      .scroll-right {
-        right: 0;
+      .div2 {
+        position: absolute;
+        width: 50%;
+        height: 100px;
+        background-color: blue;
+        left: 50%;
       }
     </style>
   </head>
   <body>
-    <div class="scroll-container">
-      <div class="scroll-content">
-        <!-- Add your content here -->
-        <div class="card">
-          <h2>Card 1</h2>
-        </div>
-        <div class="card">
-          <h2>Card 2</h2>
-        </div>
-        <div class="card">
-          <h2>Card 3</h2>
-        </div>
-        <div class="card">
-          <h2>Card 4</h2>
-        </div>
-        <div class="card">
-          <h2>Card 5</h2>
-        </div>
-        <div class="card">
-          <h2>Card 6</h2>
-        </div>
-        <div class="card">
-          <h2>Card 7</h2>
-        </div>
-        <div class="card">
-          <h2>Card 8</h2>
-        </div>
-        <div class="card">
-          <h2>Card 9</h2>
-        </div>
-      </div>
-      <button class="scroll-left" style.display>Prnones</button>
-      <button class="scroll-right">Next</button>
+    <div class="container">
+      <div class="div1">Div 1</div>
+      <div class="div2">Div 2</div>
     </div>
-
-    <script>
-      const scrollContainer = document.querySelector(".scroll-container");
-      const scrollContent = document.querySelector(".scroll-content");
-      const scrollLeft = document.querySelector(".scroll-left");
-      const scrollRight = document.querySelector(".scroll-right");
-
-      let scrollPosition = 0;
-
-      const scroll = (amount) => {
-        if (scrollPosition === 0) {
-          scrollLeft.style.display = 'none';
-        } else {
-          scrollLeft.style.display = 'flex';
-        }
-
-        if (
-          scrollPosition ===
-          scrollContainer.clientWidth - scrollContent.clientWidth
-        ) {
-          // scrollRight.style.display = 'none';
-        } else {
-          scrollRight.style.display ='flex';
-        }
-      };
-
-      scrollLeft.addEventListener("click", () =>{ scrollContent.scrollLeft += (scrollContent.clientWidth/4);
-      scroll()});
-      scrollRight.addEventListener("click", () => {
-        scrollContent.scrollLeft -= (scrollContent.clientWidth/4);
-        scroll()
-      });
-
-      // Initial scroll
-      scroll(100);
-    </script>
   </body>
 </html>

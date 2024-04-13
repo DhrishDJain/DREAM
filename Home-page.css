@@ -1,11 +1,9 @@
-nav {
+.mainnav {
   display: grid;
   position: sticky;
   grid-template-columns: 26vw 50vw 18vw;
   top: 0;
   z-index: 2;
-  align-items: center;
-  justify-items: center;
   padding: 18px 1vw;
   column-gap: 15px;
   background-color: rgb(255, 255, 255);
@@ -30,6 +28,9 @@ nav {
   column-gap: 15px;
 }
 
+.sidenav > * {
+  display: none;
+}
 .action {
   letter-spacing: 2px;
   font-size: 9px;
@@ -39,7 +40,6 @@ nav {
 .search {
   grid-row: 1;
   grid-column: 2;
-  /* align-self: center; */
   height: 45px;
   width: 100%;
   border-radius: 6px;
@@ -59,8 +59,8 @@ nav {
 }
 
 .banner {
-  /* height: 32vh; */
   overflow-x: scroll;
+  position: relative;
   scroll-snap-type: x mandatory;
 }
 
@@ -71,7 +71,6 @@ nav {
 }
 
 .catogary {
-  /* position: relative; */
   margin: 23px 0vw;
   text-align: center;
   height: 15rem;
@@ -430,7 +429,7 @@ p {
   align-self: center;
 }
 
-.footer {
+footer {
   display: grid;
   grid-template-rows: auto 20rem;
   margin-top: 20px;
@@ -441,6 +440,20 @@ p {
 
 .links {
   grid-row: 1;
+}
+
+.footlink li {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  column-gap: 11px;
+  padding: 8px 0px;
+}
+
+.footlink li:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+  text-decoration-thickness: 2.2px;
 }
 
 .socialmedia {
@@ -465,7 +478,7 @@ p {
     text-decoration-thickness: none;
   }
 
-  nav {
+  .mainnav {
     grid-template-columns: 12vw 65vw 20vw;
     grid-template-rows: 3rem 3.5rem;
     column-gap: 0vw;
@@ -488,17 +501,72 @@ p {
 
   .logo {
     grid-column: 2/3;
-    font-size: 3.5vw;
+    font-size: 0.9rem;
   }
 
   .logo img {
-    height: 15vw;
-    width: 15vw;
+    height: 3.5rem;
+    width: 3.5rem;
   }
 
   .quickaction {
     grid-column: 3 / end;
     column-gap: 8px;
+  }
+  .sidenav > * {
+    display: block;
+  }
+  .sidemenu {
+    position: fixed;
+    background-color: var(--primary);
+    color: #ffffff;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9;
+    transition: width 0.1s ease;
+  }
+
+  .optionnav {
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    row-gap: 28px;
+    height: fit-content;
+    width: 100%;
+    position: absolute;
+  }
+  .account {
+    border-bottom: 1px solid white;
+    height: 70px;
+    padding: 40px 10px !important;
+  }
+  .navs {
+    column-gap: 7px;
+    padding: 0px 10px;
+    font-size: larger;
+  }
+
+  .catnav {
+    & li {
+      padding: 1.6vh 44px;
+    }
+  }
+  .catnav[open] {
+    & summary svg {
+      transform: rotate(90deg);
+    }
+  }
+  .footnav {
+    display: flex;
+    border-top: 1px solid white;
+    position: absolute;
+    flex-direction: column;
+    top: 85%;
+    height: fit-content;
+    padding-top: 10px;
+    row-gap: 10px;
   }
 
   .search {
@@ -679,7 +747,7 @@ p {
     font-size: 5vw;
     bottom: -45px;
   }
-  .footer {
+  footer {
     display: flex;
     flex-direction: column;
     row-gap: 22px;
