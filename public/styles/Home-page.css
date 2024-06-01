@@ -19,13 +19,15 @@
   color: var(--primary);
   font-size: 1.2rem;
   column-gap: 3px;
-  font-family: "Philosopher", sans-serif;
 }
 
 .quickaction {
   grid-column: 3 / end;
   justify-self: center;
   column-gap: 15px;
+  * img {
+    height: 3rem;
+  }
 }
 
 .sidenav > * {
@@ -34,7 +36,7 @@
 .action {
   letter-spacing: 2px;
   font-size: 9px;
-  row-gap: 3px;
+  row-gap: 9px;
 }
 
 .search {
@@ -45,17 +47,17 @@
   border-radius: 6px;
   border: 2px solid var(--primary);
   background-color: var(--primary);
-}
 
+  * img {
+    height: 2rem;
+    padding: 4px;
+    margin: 0px 5px;
+  }
+}
 .search input {
   padding: 0px 9px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-}
-
-.search img {
-  padding: 4px;
-  margin: 0px 5px;
 }
 
 .banner {
@@ -482,17 +484,21 @@ footer {
     grid-template-columns: 12vw 65vw 20vw;
     grid-template-rows: 3rem 3.5rem;
     column-gap: 0vw;
-    padding: 4px;
+    row-gap: 5px;
+    padding: 6px 4px;
     justify-content: flex-end;
   }
 
-  nav img {
+  /* nav img {
     height: 10vw;
     width: 2rem;
-  }
+  } */
 
   .option {
     display: block !important;
+    * img {
+      height: 2rem;
+    }
   }
 
   #acc {
@@ -501,7 +507,8 @@ footer {
 
   .logo {
     grid-column: 2/3;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
   }
 
   .logo img {
@@ -511,7 +518,13 @@ footer {
 
   .quickaction {
     grid-column: 3 / end;
-    column-gap: 8px;
+    column-gap: 10px;
+    * img {
+      height: 1.8rem;
+    }
+  }
+  .search img {
+    height: 2rem;
   }
   .sidenav > * {
     display: block;

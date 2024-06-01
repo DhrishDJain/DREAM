@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart&Order</title>
-    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="stylesheet" href="../styles/Home-page-default.css" />
+    <link rel="stylesheet" href="../../src/output.css" />
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
       nav {
         grid-template-areas:
           "logo clo"
           "sear sear";
+        grid-template-rows: max-content;
       }
       .logo {
         grid-area: logo;
@@ -24,11 +30,11 @@
   </head>
   <body>
     <nav
-      class="bg-[#21a6ff] min-w-full grid items-center h-[10rem] sm:h-[6rem] px-3 sm:px-6 sm:flex "
+      class="bg-[#21a6ff] gap-y-4 py-3 min-w-full grid items-center h-[35vw] sm:h-[6rem] font-head px-3 sm:px-6 sm:flex"
     >
       <div class="logo flex items-center">
         <svg
-          width="6rem"
+          class="w-[16vw]"
           viewBox="0 0 128 98"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,50 +47,56 @@
           />
         </svg>
         <div class="flex flex-col text-white">
-          <span class="text-3xl tracking-widest">RAYANSHI</span>
-          <span class="text-[1rem] tracking-[0.09rem]">JEWELS PVT LTD</span>
+          <span class="text-[5vw] sm:text-[2rem] tracking-widest"
+            >RAYANSHI</span
+          >
+          <span class="text-[3vw] sm:text-[1rem] tracking-[0.09rem]"
+            >JEWELS PVT LTD</span
+          >
         </div>
       </div>
 
-        <div
-          class="search mx-[8px] flex rounded-[6px] border-white border-[3px] h-[3rem] sm:ml-auto sm:w-[25vw]"
-        >
-          <input
-            style="outline: none"
-            class="input w-full pl-[4px] rounded-l-[3px] h-full"
-            type="text"
-            placeholder="Search"
-          />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              class="m-[5px] w-[2.1rem]"
-              viewBox="0 0 513.749 513.749"
-              style="enable-background: new 0 0 513.749 513.749"
-              width="2.3rem"
-            >
-              <g>
-                <path
-                  fill="#ffffff"
-                  d="M504.352,459.061l-99.435-99.477c74.402-99.427,54.115-240.344-45.312-314.746S119.261-9.277,44.859,90.15   S-9.256,330.494,90.171,404.896c79.868,59.766,189.565,59.766,269.434,0l99.477,99.477c12.501,12.501,32.769,12.501,45.269,0   c12.501-12.501,12.501-32.769,0-45.269L504.352,459.061z M225.717,385.696c-88.366,0-160-71.634-160-160s71.634-160,160-160   s160,71.634,160,160C385.623,314.022,314.044,385.602,225.717,385.696z"
-                />
-              </g>
-            </svg>
-          </button>
-        </div>
+      <div
+        class="search mx-[8px] flex rounded-[6px] border-white border-[3px] h-[3rem] sm:ml-auto sm:w-[25vw]"
+      >
+        <input
+          style="outline: none"
+          class="input w-full pl-[4px] rounded-l-[3px] h-full"
+          type="text"
+          placeholder="Search"
+        />
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            class="m-[9px] w-[1.7rem]"
+            viewBox="0 0 513.749 513.749"
+            style="enable-background: new 0 0 513.749 513.749"
+          >
+            <g>
+              <path
+                fill="#ffffff"
+                d="M504.352,459.061l-99.435-99.477c74.402-99.427,54.115-240.344-45.312-314.746S119.261-9.277,44.859,90.15   S-9.256,330.494,90.171,404.896c79.868,59.766,189.565,59.766,269.434,0l99.477,99.477c12.501,12.501,32.769,12.501,45.269,0   c12.501-12.501,12.501-32.769,0-45.269L504.352,459.061z M225.717,385.696c-88.366,0-160-71.634-160-160s71.634-160,160-160   s160,71.634,160,160C385.623,314.022,314.044,385.602,225.717,385.696z"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="4rem"
-          class="close mr-0 ml-1 justify-self-end"
-        >
-          <path
-            fill="#ffffff"
-            d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z"
-          />
-        </svg>
+      <div class="close mr-0 ml-1 justify-self-end">
+        <a href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="w-[11vw]"
+          >
+            <path
+              fill="#ffffff"
+              d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z"
+            />
+          </svg>
+        </a>
       </div>
     </nav>
   </body>

@@ -574,14 +574,16 @@ video {
   margin: 5px;
 }
 
-.mx-\[5px\] {
-  margin-left: 5px;
-  margin-right: 5px;
+.m-\[6px\] {
+  margin: 6px;
 }
 
-.mx-\[px\] {
-  margin-left: px;
-  margin-right: px;
+.m-\[px\] {
+  margin: px;
+}
+
+.m-\[9px\] {
+  margin: 9px;
 }
 
 .mx-\[8px\] {
@@ -589,16 +591,16 @@ video {
   margin-right: 8px;
 }
 
-.ml-auto {
-  margin-left: auto;
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .mr-0 {
   margin-right: 0px;
 }
 
-.ml-1 {
-  margin-left: 0.25rem;
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .flex {
@@ -617,24 +619,144 @@ video {
   height: 3rem;
 }
 
-.h-\[9rem\] {
-  height: 9rem;
+.h-\[8rem\] {
+  height: 8rem;
 }
 
 .h-full {
   height: 100%;
 }
 
-.h-\[10rem\] {
-  height: 10rem;
+.h-\[8\] {
+  height: 8;
+}
+
+.h-\[8vh\] {
+  height: 8vh;
+}
+
+.h-\[18vh\] {
+  height: 18vh;
+}
+
+.h-\[30vh\] {
+  height: 30vh;
+}
+
+.h-\[30v\] {
+  height: 30v;
+}
+
+.h-\[30vw\] {
+  height: 30vw;
+}
+
+.h-\[34vw\] {
+  height: 34vw;
+}
+
+.h-\[3vw\] {
+  height: 3vw;
+}
+
+.h-\[32vw\] {
+  height: 32vw;
+}
+
+.h-\[35vw\] {
+  height: 35vw;
+}
+
+.h-\[37vw\] {
+  height: 37vw;
 }
 
 .w-\[2\.1rem\] {
   width: 2.1rem;
 }
 
+.w-\[2vw\] {
+  width: 2vw;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-\[vw\] {
+  width: vw;
+}
+
+.w-\[6vw\] {
+  width: 6vw;
+}
+
+.w-\[7vw\] {
+  width: 7vw;
+}
+
+.w-\[3vw\] {
+  width: 3vw;
+}
+
+.w-\[4vw\] {
+  width: 4vw;
+}
+
+.w-\[5vw\] {
+  width: 5vw;
+}
+
+.w-\[8vw\] {
+  width: 8vw;
+}
+
+.w-\[9vw\] {
+  width: 9vw;
+}
+
+.w-\[12vw\] {
+  width: 12vw;
+}
+
+.w-\[14vw\] {
+  width: 14vw;
+}
+
+.w-\[16vw\] {
+  width: 16vw;
+}
+
+.w-\[1vw\] {
+  width: 1vw;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[2v\] {
+  width: 2v;
+}
+
+.w-\[15vw\] {
+  width: 15vw;
+}
+
+.w-\[11vw\] {
+  width: 11vw;
+}
+
+.w-\[2rem\] {
+  width: 2rem;
+}
+
+.w-\[1\.rem\] {
+  width: 1.rem;
+}
+
+.w-\[1\.7rem\] {
+  width: 1.7rem;
 }
 
 .min-w-full {
@@ -645,6 +767,11 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.columns-1 {
+  -moz-columns: 1;
+       columns: 1;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -653,13 +780,8 @@ video {
   align-items: center;
 }
 
-.justify-between {
-  justify-content: space-between;
-}
-
-.gap-x-2 {
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .justify-self-end {
@@ -689,41 +811,42 @@ video {
   background-color: rgb(33 166 255 / var(--tw-bg-opacity));
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
 
-.px-\[\] {
-  padding-left: ;
-  padding-right: ;
-}
-
-.px-\[5\] {
-  padding-left: 5;
-  padding-right: 5;
-}
-
-.px-\[5px\] {
-  padding-left: 5px;
-  padding-right: 5px;
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .pl-\[4px\] {
   padding-left: 4px;
 }
 
-.pl-2 {
-  padding-left: 0.5rem;
+.pt-3 {
+  padding-top: 0.75rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-\[2vw\] {
+  font-size: 2vw;
 }
 
-.text-\[1rem\] {
-  font-size: 1rem;
+.text-\[4vw\] {
+  font-size: 4vw;
+}
+
+.text-\[5vw\] {
+  font-size: 5vw;
+}
+
+.text-\[3vw\] {
+  font-size: 3vw;
 }
 
 .tracking-\[0\.09rem\] {
@@ -739,6 +862,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[vw\] {
+  color: vw;
+}
+
 .outline {
   outline-style: solid;
 }
@@ -752,64 +879,24 @@ video {
     display: flex;
   }
 
-  .sm\:h-\[60rem\] {
-    height: 60rem;
-  }
-
   .sm\:h-\[6rem\] {
     height: 6rem;
-  }
-
-  .sm\:h-\[8rem\] {
-    height: 8rem;
-  }
-
-  .sm\:h-\[rem\] {
-    height: rem;
-  }
-
-  .sm\:w-\[\] {
-    width: ;
-  }
-
-  .sm\:w-\[100px\] {
-    width: 100px;
-  }
-
-  .sm\:w-\[1000px\] {
-    width: 1000px;
-  }
-
-  .sm\:w-\[10vw\] {
-    width: 10vw;
-  }
-
-  .sm\:w-\[50vw\] {
-    width: 50vw;
-  }
-
-  .sm\:w-\[30vw\] {
-    width: 30vw;
   }
 
   .sm\:w-\[25vw\] {
     width: 25vw;
   }
 
-  .sm\:justify-between {
-    justify-content: space-between;
-  }
-
-  .sm\:self-end {
-    align-self: flex-end;
-  }
-
-  .sm\:justify-self-end {
-    justify-self: end;
-  }
-
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:text-\[1rem\] {
+    font-size: 1rem;
+  }
+
+  .sm\:text-\[2rem\] {
+    font-size: 2rem;
   }
 }
