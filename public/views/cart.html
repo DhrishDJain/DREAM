@@ -14,8 +14,16 @@
       nav {
         grid-template-areas:
           "logo clo"
-          "sear sear";
-        grid-template-rows: max-content;
+          "sear sear"
+          "sec sec";
+      }
+      @media (min-width: 768px) {
+        nav {
+          grid-template-areas:
+            "logo sear clo"
+            "sec sec sec";
+          grid-template-columns: auto auto max-content;
+        }
       }
       .logo {
         grid-area: logo;
@@ -26,15 +34,18 @@
       .search {
         grid-area: sear;
       }
+      .section {
+        grid-area: sec;
+      }
     </style>
   </head>
   <body>
     <nav
-      class="bg-[#21a6ff] gap-y-4 py-3 min-w-full grid items-center h-[35vw] sm:h-[6rem] font-head px-3 sm:px-6 sm:flex"
+      class="bg-[#21a6ff] gap-y-6 py-3 min-w-full grid items-center h-fit font-head px-4 md:px-6"
     >
       <div class="logo flex items-center">
         <svg
-          class="w-[16vw]"
+          class="w-[16vw] md:w-[6rem]"
           viewBox="0 0 128 98"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -47,21 +58,20 @@
           />
         </svg>
         <div class="flex flex-col text-white">
-          <span class="text-[5vw] sm:text-[2rem] tracking-widest"
+          <span class="text-[5vw] md:text-[2rem] tracking-widest"
             >RAYANSHI</span
           >
-          <span class="text-[3vw] sm:text-[1rem] tracking-[0.09rem]"
+          <span class="text-[3vw] md:text-[1rem] tracking-[0.09rem]"
             >JEWELS PVT LTD</span
           >
         </div>
       </div>
 
       <div
-        class="search mx-[8px] flex rounded-[6px] border-white border-[3px] h-[3rem] sm:ml-auto sm:w-[25vw]"
+        class="search mx-[8px] flex rounded-[6px] border-white border-[3px] h-[3rem] md:ml-auto md:w-[25vw]"
       >
         <input
-          style="outline: none"
-          class="input w-full pl-[4px] rounded-l-[3px] h-full"
+          class="input font tracking-[3px] w-full pl-[15px] rounded-l-[3px] h-full"
           type="text"
           placeholder="Search"
         />
@@ -89,7 +99,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="w-[11vw]"
+            class="w-[11vw] md:w-[4rem]"
           >
             <path
               fill="#ffffff"
@@ -98,6 +108,53 @@
           </svg>
         </a>
       </div>
+      <div
+        class="section cursor-pointer relative py-2 flex flex-nowrap font font-extrabold text-white tracking-[3px] items-center overflow-y-hidden overflow-x-auto noscroll gap-x-[5vw] h-full"
+      >
+        <div
+          class="secbtn flex items-center justify-center h-[90%] min-w-[8rem] active"
+        >
+          <span>Cart</span>
+        </div>
+        <div
+          class="secbtn flex items-center justify-center h-[90%] min-w-[8rem]"
+        >
+          <span>Order</span>
+        </div>
+        <div
+          class="secbtn flex items-center justify-center h-[90%] min-w-[8rem]"
+        >
+          <span>Whishlist</span>
+        </div>
+        <div
+          style="transition: left 0.3s ease, width 0.3s ease"
+          class="underline absolute top-[93%] h-[5px] w-[8rem] bg-white"
+        ></div>
+      </div>
+      <script>
+        const secbtn = document.querySelectorAll(".secbtn");
+        const underline = document.querySelector(".underline");
+
+        function updateUnderline() {
+          const activeTab = document.querySelector(".secbtn.active");
+          underline.style.left = `${activeTab.offsetLeft}px`;
+        }
+
+        secbtn.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            secbtn.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            updateUnderline();
+          });
+        });
+
+        updateUnderline();
+      </script>
     </nav>
+    <aside class="float-right font font-extrabold h-[4rem] border-[5px]">
+      <div class="quickoption h-[90%] w-[2rem] bg-[var(--primary)]">
+
+      </div>
+    </aside>
   </body>
 </html>

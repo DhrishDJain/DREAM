@@ -354,18 +354,15 @@
         const scrollImages = document.querySelector(".catogary");
         const scrollLength =
           scrollImages.scrollWidth - scrollImages.clientWidth;
-        console.log(scrollImages.scrollWidth);
         const leftButton = document.querySelector(".btn-left");
         const rightButton = document.querySelector(".btn-right");
 
         leftButton.addEventListener("click", () => {
           scrollImages.scrollLeft -= scrollImages.clientWidth;
-          console.log(scrollImages.scrollLeft);
         });
 
         rightButton.addEventListener("click", () => {
           scrollImages.scrollLeft += scrollImages.clientWidth;
-          console.log(scrollImages.scrollLeft);
         });
         scrollImages.addEventListener("scroll", () => {
           if (
