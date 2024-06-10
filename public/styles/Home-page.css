@@ -489,11 +489,6 @@ footer {
     justify-content: flex-end;
   }
 
-  /* nav img {
-    height: 10vw;
-    width: 2rem;
-  } */
-
   .option {
     display: block !important;
     * img {
