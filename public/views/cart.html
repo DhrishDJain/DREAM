@@ -44,11 +44,16 @@
       #btnf:checked ~ .filteroption {
         display: block;
       }
-      .choosed {
+      .quickview li {
+        height: 2rem;
+        /* border: 1px solid black; */
+        }
+        .choosed {
+        text-align: center;
         height: 120%;
         padding: 4px;
+        font-weight: 900;
         color: var(--primary);
-        text-align: center;
         background-color: white;
         border-radius: 5px;
         transition: down 0.3s ease;
@@ -177,7 +182,12 @@
         name="sort"
         class="relative flex h-[90%] w-[6rem] rounded-[5px] bg-[var(--primary)]"
       >
-        <input type="checkbox" id="btn" class="lable hidden" />
+        <input
+          type="checkbox"
+          id="btn"
+          class="lable hidden"
+          onclick="action(this)"
+        />
         <label
           for="btn"
           class="flex relative items-center justify-around w-full"
@@ -197,7 +207,7 @@
         <div
           class="sortoption content hidden z-[1] absolute bg-[var(--primary)] rounded-[7px] h-fit w-max top-[3.2rem] right-[0]"
         >
-          <ul class="p-[13px] text-[1.1rem] space-y-[7px] tracking-[2px]">
+          <ul class="p-[10px] text-[1.1rem] space-y-[3px] tracking-[2px]">
             <li>Price : Low - High</li>
             <li>Price : High - Low</li>
             <li>Rating : Low - High</li>
@@ -209,7 +219,12 @@
         name="filter"
         class="relative flex h-[90%] w-[6rem] rounded-[5px] bg-[var(--primary)]"
       >
-        <input type="checkbox" id="btnf" class="lable hidden" />
+        <input
+          type="checkbox"
+          id="btnf"
+          class="lable hidden"
+          onclick="action(this)"
+        />
         <label
           for="btnf"
           class="flex relative items-center justify-around w-full"
@@ -233,7 +248,7 @@
         <div
           class="filteroption content hidden z-[1] absolute bg-[var(--primary)] rounded-[7px] h-fit w-max top-[3.2rem] right-[0]"
         >
-          <ul class="p-[13px] text-[1.1rem] space-y-[7px] tracking-[2px]">
+          <ul class="p-[10px] text-[1.1rem] space-y-[3px] tracking-[2px]">
             <li>Date : New-Old</li>
             <li>Date : Old-New</li>
             <li>Catogary</li>
@@ -243,32 +258,38 @@
       <script>
         var btnlable = document.querySelectorAll(".lable");
         const aside = document.querySelector(".quickview");
-        const content = document.querySelectorAll(".content");
         const alllable = document.querySelectorAll(".quickview li");
-        window.addEventListener("click", function (e) {
-          if (aside.contains(e.target)) {
-            btnlable.forEach((tab) => {
-              tab.addEventListener("click", () => {
-                btnlable.forEach((test) => {
-                  test.checked = false;
-                });
+        function action(tab) {
+          window.addEventListener("click", function (e) {
+            if (aside.contains(e.target)) {
+              btnlable.forEach((test) => {
+                test.checked = false;
+                if (test != tab) {
+                  tab.classList.remove("alreadychecked");
+                }
+              });
+              if (tab.classList.contains("alreadychecked")) {
+                tab.checked = false;
+                tab.classList.remove("alreadychecked");
+              } else {
                 tab.checked = true;
-              });
-            });
-            alllable.forEach((option) => {
-              option.addEventListener("click", () => {
-                alllable.forEach((test) => {
-                  test.classList.remove("choosed");
+                tab.classList.add("alreadychecked");
+              }
+              alllable.forEach((option) => {
+                option.addEventListener("click", () => {
+                  alllable.forEach((test) => {
+                    test.classList.remove("choosed");
+                  });
+                  option.classList.add("choosed");
                 });
-                option.classList.add("choosed");
               });
-            });
-          } else {
-            btnlable.forEach((test) => {
-              test.checked = false;
-            });
-          }
-        });
+            } else {
+              btnlable.forEach((test) => {
+                test.checked = false;
+              });
+            }
+          });
+        }
       </script>
     </aside>
   </body>
