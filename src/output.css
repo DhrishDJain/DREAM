@@ -741,35 +741,18 @@ video {
   justify-content: space-around;
 }
 
-.gap-x-\[5vw\] {
-  -moz-column-gap: 5vw;
-       column-gap: 5vw;
-}
-
-.gap-x-\[9px\] {
-  -moz-column-gap: 9px;
-       column-gap: 9px;
-}
-
-.gap-y-6 {
-  row-gap: 1.5rem;
-}
-
 .gap-x-\[12px\] {
   -moz-column-gap: 12px;
        column-gap: 12px;
 }
 
-.space-y-\[5px\] > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(5px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(5px * var(--tw-space-y-reverse));
+.gap-x-\[5vw\] {
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
 }
 
-.space-y-\[px\] > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(px * var(--tw-space-y-reverse));
+.gap-y-6 {
+  row-gap: 1.5rem;
 }
 
 .space-y-\[7px\] > :not([hidden]) ~ :not([hidden]) {
@@ -830,16 +813,12 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.p-\[10px\] {
-  padding: 10px;
+.p-\[13px\] {
+  padding: 13px;
 }
 
 .p-\[7px\] {
   padding: 7px;
-}
-
-.p-\[13px\] {
-  padding: 13px;
 }
 
 .px-4 {

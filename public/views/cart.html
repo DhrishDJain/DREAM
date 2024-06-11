@@ -44,6 +44,15 @@
       #btnf:checked ~ .filteroption {
         display: block;
       }
+      .choosed {
+        height: 120%;
+        padding: 4px;
+        color: var(--primary);
+        text-align: center;
+        background-color: white;
+        border-radius: 5px;
+        transition: down 0.3s ease;
+      }
     </style>
   </head>
   <body>
@@ -117,7 +126,7 @@
           </a>
         </div>
         <div
-          class="section  cursor-pointer relative py-2 flex flex-nowrap font font-extrabold text-white tracking-[3px] items-center overflow-y-hidden overflow-x-auto noscroll gap-x-[5vw] h-full"
+          class="section cursor-pointer relative py-2 flex flex-nowrap font font-extrabold text-white tracking-[3px] items-center overflow-y-hidden overflow-x-auto noscroll gap-x-[5vw] h-full"
         >
           <div
             class="secbtn flex items-center justify-center h-[90%] min-w-[8rem] active"
@@ -186,13 +195,13 @@
           </svg>
         </label>
         <div
-          class="sortoption hidden z-[1] absolute bg-[var(--primary)] rounded-[7px] h-fit w-max top-[3.2rem] right-[0]"
+          class="sortoption content hidden z-[1] absolute bg-[var(--primary)] rounded-[7px] h-fit w-max top-[3.2rem] right-[0]"
         >
           <ul class="p-[13px] text-[1.1rem] space-y-[7px] tracking-[2px]">
-            <li>Price : Low-High</li>
-            <li>Price : High-Low</li>
-            <li>Rating : Low-High</li>
-            <li>Rating : High-Low</li>
+            <li>Price : Low - High</li>
+            <li>Price : High - Low</li>
+            <li>Rating : Low - High</li>
+            <li>Rating : High - Low</li>
           </ul>
         </div>
       </div>
@@ -222,7 +231,7 @@
           </svg>
         </label>
         <div
-          class="filteroption hidden z-[1] absolute bg-[var(--primary)] rounded-[7px] h-fit w-max top-[3.2rem] right-[0]"
+          class="filteroption content hidden z-[1] absolute bg-[var(--primary)] rounded-[7px] h-fit w-max top-[3.2rem] right-[0]"
         >
           <ul class="p-[13px] text-[1.1rem] space-y-[7px] tracking-[2px]">
             <li>Date : New-Old</li>
@@ -234,27 +243,29 @@
       <script>
         var btnlable = document.querySelectorAll(".lable");
         const aside = document.querySelector(".quickview");
+        const content = document.querySelectorAll(".content");
+        const alllable = document.querySelectorAll(".quickview li");
         window.addEventListener("click", function (e) {
-          if (aside.contains(e.target) == true) {
+          if (aside.contains(e.target)) {
             btnlable.forEach((tab) => {
               tab.addEventListener("click", () => {
                 btnlable.forEach((test) => {
-                  if (
-                    tab != test ||
-                    test.classList.contains("alreadychecked") == true
-                  ) {
-                    test.checked = false;
-                    test.classList.remove("alreadychecked");
-                  } else {
-                    test.checked = true;
-                    test.classList.add("alreadychecked");
-                  }
+                  test.checked = false;
                 });
+                tab.checked = true;
+              });
+            });
+            alllable.forEach((option) => {
+              option.addEventListener("click", () => {
+                alllable.forEach((test) => {
+                  test.classList.remove("choosed");
+                });
+                option.classList.add("choosed");
               });
             });
           } else {
-            btnlable.forEach((tab) => {
-              tab.checked = false;
+            btnlable.forEach((test) => {
+              test.checked = false;
             });
           }
         });
