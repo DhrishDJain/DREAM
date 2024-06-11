@@ -359,23 +359,23 @@ p {
 }
 
 .o1::before {
-  background-image: url(/icons/occasion/bg-1.jpeg);
+  background-image: url(icons/occasion/bg-1.jpeg);
   background-position: center;
 }
 
 .o2::before {
   grid-area: oc2;
-  background-image: url(/icons/occasion/bg-2.jpeg);
+  background-image: url(icons/occasion/bg-2.jpeg);
   background-position: bottom;
 }
 
 .o3::before {
   grid-area: oc3;
-  background-image: url(/icons/occasion/bg-3.jpeg);
+  background-image: url(icons/occasion/bg-3.jpeg);
 }
 
 .o4::before {
-  background-image: url(/icons/occasion/bg-4.jpeg);
+  background-image: url(icons/occasion/bg-4.jpeg);
   background-position: bottom;
 }
 
