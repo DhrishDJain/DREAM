@@ -16,6 +16,7 @@
           "logo clo"
           "sear sear"
           "sec sec";
+        grid-template-rows: auto auto 2.5rem;
       }
       @media (min-width: 768px) {
         nav {
@@ -23,6 +24,7 @@
             "logo sear clo"
             "sec sec sec";
           grid-template-columns: auto auto max-content;
+          grid-template-rows: auto auto;
         }
       }
       .logo {
@@ -46,9 +48,8 @@
       }
       .quickview li {
         height: 2rem;
-        /* border: 1px solid black; */
-        }
-        .choosed {
+      }
+      .choosed {
         text-align: center;
         height: 120%;
         padding: 4px;
@@ -58,12 +59,19 @@
         border-radius: 5px;
         transition: down 0.3s ease;
       }
+      .item {
+        grid-template-columns: min-content auto min-content min-content;
+        grid-template-rows: auto;
+      }
+      #savelater:checked ~ #heart path {
+        fill: var(--secdetail);
+      }
     </style>
   </head>
   <body>
-    <header class="relative select-none min-w-full">
+    <header class="sticky select-none min-w-full">
       <nav
-        class="bg-[#21a6ff] sticky gap-y-6 py-3 w-full grid items-center h-fit font-head px-4 md:px-6"
+        class="bg-[#21a6ff] relative gap-y-3 md:gap-y-7 pt-4 pb-3 w-full grid items-center h-fit font-head px-3 md:px-6"
       >
         <div class="logo flex items-center">
           <svg
@@ -131,26 +139,26 @@
           </a>
         </div>
         <div
-          class="section cursor-pointer relative py-2 flex flex-nowrap font font-extrabold text-white tracking-[3px] items-center overflow-y-hidden overflow-x-auto noscroll gap-x-[5vw] h-full"
+          class="section cursor-pointer relative flex flex-nowrap font font-extrabold text-white tracking-[3px] items-center overflow-y-hidden overflow-x-auto noscroll mb-1 md:mb-4 gap-x-[3vw] h-full"
         >
           <div
-            class="secbtn flex items-center justify-center h-[90%] min-w-[8rem] active"
+            class="secbtn flex items-center justify-center h-fit min-w-[8rem] active"
           >
             <span>Cart</span>
           </div>
           <div
-            class="secbtn flex items-center justify-center h-[90%] min-w-[8rem]"
+            class="secbtn flex items-center justify-center h-fit min-w-[8rem]"
           >
             <span>Order</span>
           </div>
           <div
-            class="secbtn flex items-center justify-center h-[90%] min-w-[8rem]"
+            class="secbtn flex items-center justify-center h-fit min-w-[8rem]"
           >
             <span>Whishlist</span>
           </div>
           <div
             style="transition: left 0.3s ease, width 0.3s ease"
-            class="underline absolute top-[93%] h-[5px] w-[8rem] bg-white"
+            class="underline absolute top-[95%] h-[5px] w-[8rem] bg-white"
           ></div>
         </div>
         <script>
@@ -176,7 +184,7 @@
     </header>
     <aside
       name=""
-      class="quickview select-none relative flex float-right font font-extrabold text-[1.2rem] text-white gap-x-[12px] h-[4rem] md:justify-end p-[7px]"
+      class="quickview select-none relative flex font font-extrabold text-[1.2rem] text-white gap-x-[12px] h-11 w-[inherit] items-center justify-end m-2"
     >
       <div
         name="sort"
@@ -265,10 +273,11 @@
               btnlable.forEach((test) => {
                 test.checked = false;
                 if (test != tab) {
-                  tab.classList.remove("alreadychecked");
+                  console.log("falsed");
+                  test.classList.remove("alreadychecked");
                 }
               });
-              if (tab.classList.contains("alreadychecked")) {
+              if (tab.classList.contains("alreadychecked") == true) {
                 tab.checked = false;
                 tab.classList.remove("alreadychecked");
               } else {
@@ -292,5 +301,114 @@
         }
       </script>
     </aside>
+    <main
+      class="block bg-[var(--primary)] font font-extrabold rounded-t-3xl p-3"
+    >
+      <div
+        name="itemcontainer "
+        class="flex flex-col overflow-y-scroll gap-y-2 h-[100vh] noscroll"
+      >
+        <div
+          class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+        >
+          <div
+            name="prductimg"
+            class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+          ></div>
+          <div
+            name="detail"
+            style="grid-column: 2"
+            class="detail flex flex-col min-w-full pl-2 justify-around  gap-y-1 tracking-[2px] min-[625px]:flex-row min-[625px]:items-center"
+          >
+            <h1 class=" font-extrabold max-[385px]:text-[15px] md:text-lg">
+              Lorem ipsum
+            </h1>
+            <h1 class="md:text-lg">₹1,111</h1>
+            <h3 class="text-xs text-[var(--secdetail)] md:text-lg">Size:21</h3>
+            <div
+              class="flex items-center text-xs text-[var(--secdetail)] gap-x-1 md:text-lg"
+            >
+              <h3 class="max-[385px]:text-[11px]">Buy later</h3>
+              <label for="savelater" class="h-fit">
+                <input id="savelater" type="checkbox" class="hidden" />
+                <svg viewBox="0 0 256 256" id="heart" class=" w-4 fill-[var(--secdetail)]">
+                  <path
+                    stroke-width="20px"
+                    stroke="var(--secdetail)"
+                    fill="none"
+                    d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div
+            style="grid-column: 3"
+            class="action min-h-full flex flex-col  items-center gap-x-[3vw] sm:flex-row max-[1024px]:gap-x-3 w-fit"
+          >
+            <div class="rating flex gap-1 mt-[40%] sm:m-0">
+              <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                <path
+                  d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                />
+              </svg>
+              <span>4.9</span>
+            </div>
+            <div class="quantity font flex mt-auto sm:my-auto h-6 min-w-fit">
+              <svg
+                viewBox="0 0 512 512"
+                id="down"
+                class="w-6 rounded-[4px] fill-white justify-self-end bg-[var(--primary)] p-1"
+              >
+                <g>
+                  <path
+                    d="M480,288H32c-17.673,0-32-14.327-32-32s14.327-32,32-32h448c17.673,0,32,14.327,32,32S497.673,288,480,288z"
+                  />
+                </g>
+              </svg>
+              <input
+                type="number"
+                min="0"
+                max="99"
+                value="1"
+                id="numdisp"
+                class="w-6 text-center"
+              />
+              <svg
+                id="up"
+                class="w-6 rounded-[4px] fill-white bg-[var(--primary)] p-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
+                />
+              </svg>
+            </div>
+
+            <script>
+              const up = document.getElementById("up");
+              const numdisp = document.getElementById("numdisp");
+              const down = document.getElementById("down");
+              up.addEventListener("click", () => {
+                numdisp.stepUp();
+              });
+              down.addEventListener("click", () => {
+                numdisp.stepDown();
+              });
+            </script>
+          </div>
+          <div
+            style="grid-column: 4"
+            class="delete absolute h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

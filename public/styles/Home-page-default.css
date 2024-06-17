@@ -2,6 +2,7 @@
 
 :root {
   --primary: #21a6ff;
+  --secdetail: #807676;
 }
 * {
   margin: 0px;
@@ -21,7 +22,15 @@
 #posabso {
   position: absolute;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 .noscroll::-webkit-scrollbar {
   display: none;
 }
