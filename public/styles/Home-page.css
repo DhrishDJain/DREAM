@@ -1,6 +1,7 @@
 .mainnav {
   display: grid;
-  position: sticky;
+  position: fixed;
+  height: fit-content;
   grid-template-columns: 26vw 50vw 18vw;
   top: 0;
   z-index: 2;
@@ -60,9 +61,9 @@
   border-bottom-left-radius: 4px;
 }
 
+
 .banner {
   overflow-x: scroll;
-  position: relative;
   scroll-snap-type: x mandatory;
 }
 
@@ -112,7 +113,6 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 4rem 0px;
-  /* position: relative; */
 }
 
 .hsection {

@@ -1,156 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="public/styles/Home-page-default.css" />
     <style>
-      /* radio settings 👇 */
-
-      .theme-popup {
-        /* total */
-        --total_text_color: #e0e0e0;
-        --total_font_family: Menlo, Roboto Mono, monospace;
-        /* button */
-        --btn_bg: #3a3a3a;
-        --btn_padding: 0.5em;
-        --btn_height: 2em;
-        --btn_border_radius: 0.3125em;
-        --btn_outline_width: 0.0625em;
-        --btn_outline_color: #a0a0a0;
-        --btn_outline_offset: 0.0625em;
-        --btn_gap: 0.3125em;
-        /* list */
-        --list_padding: 0.5em;
-        --list_bg: var(--btn_bg);
-        --list_border_radius: var(--btn_border_radius);
-        --list_gap: 0.1875em;
-        --list_btn_hover_bg: #5a5656;
-        --list_btn_active: #b9b9b970;
-        --list_btn_border_radius: 0.25em;
-        --list_btn_padding: 0.35em 1em;
-        --list_btn_gap: 0.4375em;
-        --list_btn_outline_width: 0.0625em;
-        --list_btn_outline_color: rgb(212, 210, 210);
-        --list_offset: 0.35em;
-        --list_btn_font_size: 14px;
-        --list_position_left: 0;
-        --list_position_right: unset;
-        /* 👆 if you want to change sides just switch one property */
-        /* from properties to "unset" and the other to 0 */
+      body {
+        background: #000;
       }
 
-      .theme-popup__button .theme-popup__icons svg,
-      #light,
-      #dark,
-      #default,
-      #checkbox,
-      .theme-popup__list-container {
-        display: none;
+      .container {
+        border: solid 1px #8d8d8d;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #fff;
       }
 
-      .theme-popup {
-        color: var(--total_text_color);
-        font-family: var(--total_font_family);
-        position: relative;
-        user-select: none;
-      }
-
-      .theme-popup__list-container {
-        position: absolute;
-        left: var(--list_position_left);
-        right: var(--list_position_right);
-        top: calc(var(--btn_height) + var(--list_offset));
-      }
-
-      .theme-popup__icons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 16px;
-        height: 16px;
-      }
-
-      .theme-popup__button {
-        line-height: var(--btn_height);
-        background-color: var(--btn_bg);
-        padding: 0 var(--btn_padding);
-        display: inline-flex;
-        align-items: center;
-        column-gap: var(--btn_gap);
-        border-radius: var(--btn_border_radius);
-        border: none;
-        color: inherit;
-        font-family: inherit;
-        outline: none;
-        font-weight: bold;
-      }
-
-      .theme-popup__list {
-        margin: 0;
-        list-style-type: none;
-        padding: var(--list_padding);
-        border-radius: var(--list_border_radius);
-        background-color: var(--list_bg);
+      .form {
+        max-width: 300px;
         display: flex;
         flex-direction: column;
-        row-gap: var(--list_gap);
+        gap: 20px;
       }
 
-      .theme-popup__list label {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        column-gap: var(--list_btn_gap);
-        padding: var(--list_btn_padding);
-        border-radius: var(--list_btn_border_radius);
-        white-space: nowrap;
+      .input-field {
+        position: relative;
       }
 
-      .theme-popup__list label span {
-        font-size: var(--list_btn_font_size);
+      .input-field label {
+        position: absolute;
+        color: #8d8d8d;
+        pointer-events: none;
+        background-color: transparent;
+        left: 15px;
+        transform: translateY(0.6rem);
+        transition: all 0.3s ease;
       }
 
-      /* actions */
-
-      #checkbox:checked ~ .theme-popup__button {
-        outline-offset: var(--btn_outline_offset);
+      .input-field input {
+        padding: 10px 15px;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: solid 1px #8d8d8d;
+        letter-spacing: 1px;
+        width: 100%;
       }
 
-      #checkbox:checked ~ .theme-popup__list-container {
-        display: block;
+      .input-field input:focus{
+        outline: none;
+        border: solid 1px #0034de;
       }
 
-      #default:checked ~ .theme-popup__list-container label[for="default"],
-      #light:checked ~ .theme-popup__list-container label[for="light"],
-      #dark:checked ~ .theme-popup__list-container label[for="dark"] {
-        background-color: var(--list_btn_active);
+      .input-field input:focus ~ label{
+        transform: translateY(-51%) translateX(-10px) scale(0.8);
+        background-color: #fff;
+        padding: 0px 5px;
+        color: #0034de;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 100px;
       }
+
+
     </style>
   </head>
   <body>
-    <div class="theme-popup">
-      <input type="radio" name="theme" id="default" checked="" />
-      <input type="radio" name="theme" id="light" />
-      <input type="radio" name="theme" id="dark" />
-      <input type="checkbox" id="checkbox" />
-      <label for="checkbox" class="theme-popup__button"> Theme </label>
-      <div class="theme-popup__list-container">
-        <ul class="theme-popup__list">
-          <li>
-            <label for="default">
-              <span> OS Default </span>
-            </label>
-          </li>
-          <li>
-            <label for="light">
-              <span> Light </span>
-            </label>
-          </li>
-          <li>
-            <label for="dark">
-              <span> Night </span>
-            </label>
-          </li>
-        </ul>
-      </div>
+    <div class="container">
+      <form class="form" action="">
+        <div class="input-field">
+          <input
+            required=""
+            autocomplete="off"
+            type="text"
+            name="text"
+            id="username"
+          />
+          <label for="username">Full Name</label>
+        </div>
+      </form>
     </div>
   </body>
 </html>

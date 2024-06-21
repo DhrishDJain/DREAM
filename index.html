@@ -239,6 +239,7 @@
           </button>
         </div>
       </nav>
+
     </header>
     <script>
       const sidenav = document.querySelector(".sidenav").children;
@@ -293,7 +294,11 @@
           />
         </div>
       </div>
-
+      <script>
+        const banner= document.querySelector(".banner");
+         banner.style.paddingTop=document.querySelector(".mainnav").offsetHeight+"px";
+         console.log(document.querySelector(".mainnav").offsetHeight)
+       </script>
       <div
         name="categorynavbtn"
         style="position: relative; display: flex; overflow-x: visible"
