@@ -86,38 +86,39 @@
       #cod:checked ~ label span.cod {
         display: flex;
       }
-      .checkoutbtn {
-        border: 2px solid white;
-        transition: all 250ms;
-        overflow: hidden;
-      }
+      @media (min-width: 1024px) {
+        .checkoutbtn {
+          border: 2px solid white;
+          transition: all 250ms;
+          overflow: hidden;
+        }
 
-      .checkoutbtn::before {
-        content: "";
-        position: absolute;
-        top: 0px;
-        left: 0;
-        height: 100%;
-        width: 0;
-        z-index: -1;
-        background-color: #fff;
-        transition: all 250ms;
-      }
+        .checkoutbtn::before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 0;
+          height: 100%;
+          width: 0;
+          background-color: #ffffff;
+          transition: all 250ms;
+        }
 
-      .checkoutbtn:hover::before {
-        width: 100%;
-      }
-      .checkoutbtn:hover .arr-1 {
-        right: -45%;
-      }
+        .checkoutbtn:hover::before {
+          width: 100%;
+        }
+        .checkoutbtn:hover .arr-1 {
+          right: -45%;
+        }
 
-      .checkoutbtn:hover .arr-2 {
-        left: 2.5rem;
-      }
+        .checkoutbtn:hover .arr-2 {
+          left: 2.5rem;
+        }
 
-      .checkoutbtn:hover .text {
-        transform: translateX(40px);
-        color: var(--primary);
+        .checkoutbtn:hover .text {
+          transform: translateX(40px);
+          color: var(--primary);
+        }
       }
       .choosed {
         text-align: center;
@@ -139,7 +140,7 @@
     </style>
   </head>
   <body>
-    <header class="fixed z-[999] select-none min-w-full">
+    <header class="fixed z-30 select-none min-w-full">
       <nav
         class="bg-[#21a6ff] relative gap-y-3 md:gap-y-7 pt-4 pb-3 w-full grid items-center h-fit font-head px-3 md:px-6"
       >
@@ -253,12 +254,11 @@
       </nav>
     </header>
     <aside
-      name=""
-      class="quickview select-none relative flex font font-extrabold text-[1.2rem] text-white gap-x-[12px] h-11 w-[inherit] items-center justify-end m-2"
+      class="fixed z-30 quickview bg-white select-none flex font font-extrabold text-[1.2rem] text-white gap-x-[12px] h-14 w-full items-center justify-end p-2"
     >
       <div
         name="sort"
-        class="relative flex h-[90%] w-[6rem] rounded-[5px] bg-[var(--primary)]"
+        class="relative flex h-full w-[6rem] rounded-[5px] bg-[var(--primary)]"
       >
         <input
           type="checkbox"
@@ -268,7 +268,7 @@
         />
         <label
           for="btn"
-          class="flex relative items-center justify-around w-full"
+          class="flex relative h-full items-center justify-around w-full"
         >
           <span>Sort</span>
           <svg
@@ -295,7 +295,7 @@
       </div>
       <div
         name="filter"
-        class="relative flex h-[90%] w-[6rem] rounded-[5px] bg-[var(--primary)]"
+        class="relative flex h-full w-[6rem] rounded-[5px] bg-[var(--primary)]"
       >
         <input
           type="checkbox"
@@ -373,13 +373,21 @@
     </aside>
 
     <main
-      class="fixed lg:grid grid-cols-[25%,auto] h-full gap-x-9 min-w-full bg-[var(--primary)] font font-extrabold rounded-t-3xl p-3 lg:p-8"
+      class="fixed lg:grid grid-cols-[25%,auto] gap-x-9 min-w-full bg-[var(--primary)] overflow-hidden bottom-0 font font-extrabold rounded-t-3xl p-4"
     >
       <div
-        class="billcontainer hidden mb-64 lg:flex flex-col flex-nowrap gap-y-2 overflow-auto tracking-widest text-white"
+        class="billcontainer hidden bg-[var(--primary)] h-full w-full px-3 rounded-t-3xl lg:flex flex-col flex-nowrap gap-y-2 overflow-x-hidden overflow-y-scroll noscroll tracking-widest text-white"
       >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 -960 960 960"
+          class="lg:hidden w-14 mx-auto"
+          fill="#ffffff"
+        >
+          <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+        </svg>
         <div
-          class="details flex flex-col gap-y-2 pb-3 flex-nowrap overflow-y-scroll noscroll h-max"
+          class="details flex flex-col gap-y-2 flex-nowrap overflow-y-scroll overflow-x-hidden noscroll"
         >
           <h1 class="Pricedetail text-2xl">Price Details</h1>
           <div class="sperator w-full min-h-1 bg-white rounded"></div>
@@ -409,7 +417,7 @@
           <div class="sperator w-full min-h-1 bg-white rounded"></div>
           <h1 class="adderesshead text-2xl">Address</h1>
           <div class="sperator w-full min-h-1 bg-white rounded"></div>
-          <p class="adderess tracking-normal">
+          <p class="adderess tracking-wide">
             305/A bldg. no 20, Lotus Apartments, Andheri
             West,Mumbai,Maharashtra,400053,India
           </p>
@@ -595,9 +603,7 @@
               </svg>
             </label>
             <div class="method hidden w-full">
-              <ul
-                class="methodlist bg-[var(--primary)] flex flex-col gap-y-1"
-              >
+              <ul class="methodlist bg-[var(--primary)] flex flex-col gap-y-1">
                 <li>
                   <label
                     for="cardpay"
@@ -761,45 +767,48 @@
             </div>
           </div>
         </div>
-
-        <button
-          class="checkoutbtn overflow-hidden z-1 mx-auto relative text-white border-2 border-white justify-start gap-0 min-h-14 rounded-xl tracking-widest font-bold text-3xl w-full text-[var(--primary)]"
+        <div
+          class="checkout top-auto right-0 left-0 lg:top-0 w-full h-fit bg-black lg:bg-transparent"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="arr-2 relative -left-1/4 h-7 w-10 fill-[var(--primary)] transition-all duration-[0.8s] ease-[cubic-bezier(0.23, 1, 0.32, 1)]"
+          <button
+            class="checkoutbtn relative overflow-hidden lg:text-white border-2 border-white bg-white lg:bg-transparent justify-center lg:justify-start gap-2 lg:gap-0 min-h-14 mx-auto rounded-xl tracking-widest font-bold text-3xl w-11/12 lg:w-full text-[var(--primary)]"
           >
-            <path
-              d="M11.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L11.12,1.71A1,1,0,1,1,12.54.29l8.17,8.17a5,5,0,0,1,0,7.08l-8.17,8.17A1,1,0,0,1,11.83,24Z"
-            />
-            <path
-              d="M1.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l9.59-9.58a1,1,0,0,0,0-1.42L1.12,1.71A1,1,0,0,1,2.54.29l9.58,9.59a3,3,0,0,1,0,4.24L2.54,23.71A1,1,0,0,1,1.83,24Z"
-            />
-          </svg>
-          <span
-            class="text font-extrabold relative -right-5 transition-all duration-[0.5s]"
-          >
-            Check Out
-          </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="arr-1 relative -right-9 h-7 w-10 fill-white transition-all duration-[0.5s] ease-[cubic-bezier(0.23, 1, 0.32, 1)]"
-          >
-            <path
-              d="M11.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L11.12,1.71A1,1,0,1,1,12.54.29l8.17,8.17a5,5,0,0,1,0,7.08l-8.17,8.17A1,1,0,0,1,11.83,24Z"
-            />
-            <path
-              d="M1.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l9.59-9.58a1,1,0,0,0,0-1.42L1.12,1.71A1,1,0,0,1,2.54.29l9.58,9.59a3,3,0,0,1,0,4.24L2.54,23.71A1,1,0,0,1,1.83,24Z"
-            />
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="arr-2 hidden lg:block relative -left-1/4 h-7 w-10 fill-[var(--primary)] transition-all duration-[0.8s] ease-[cubic-bezier(0.23, 1, 0.32, 1)]"
+            >
+              <path
+                d="M11.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L11.12,1.71A1,1,0,1,1,12.54.29l8.17,8.17a5,5,0,0,1,0,7.08l-8.17,8.17A1,1,0,0,1,11.83,24Z"
+              />
+              <path
+                d="M1.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l9.59-9.58a1,1,0,0,0,0-1.42L1.12,1.71A1,1,0,0,1,2.54.29l9.58,9.59a3,3,0,0,1,0,4.24L2.54,23.71A1,1,0,0,1,1.83,24Z"
+              />
+            </svg>
+            <span
+              class="text font-extrabold lg:relative -right-5 transition-all duration-[0.5s]"
+            >
+              Check Out
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="arr-1 lg:relative -right-9 h-7 w-10 fill-[var(--primary)] lg:fill-white transition-all duration-[0.5s] ease-[cubic-bezier(0.23, 1, 0.32, 1)]"
+            >
+              <path
+                d="M11.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L11.12,1.71A1,1,0,1,1,12.54.29l8.17,8.17a5,5,0,0,1,0,7.08l-8.17,8.17A1,1,0,0,1,11.83,24Z"
+              />
+              <path
+                d="M1.83,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l9.59-9.58a1,1,0,0,0,0-1.42L1.12,1.71A1,1,0,0,1,2.54.29l9.58,9.59a3,3,0,0,1,0,4.24L2.54,23.71A1,1,0,0,1,1.83,24Z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div
         name="itemcontainer "
-        class="flex flex-col overflow-y-scroll gap-y-2 h-full noscroll"
+        class="flex flex-col noscroll h-full overflow-y-auto gap-y-2"
       >
         <div
           class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
@@ -883,18 +892,6 @@
                 />
               </svg>
             </div>
-
-            <script>
-              const up = document.getElementById("up");
-              const numdisp = document.getElementById("numdisp");
-              const down = document.getElementById("down");
-              up.addEventListener("click", () => {
-                numdisp.stepUp();
-              });
-              down.addEventListener("click", () => {
-                numdisp.stepDown();
-              });
-            </script>
           </div>
           <div
             style="grid-column: 4"
@@ -907,16 +904,502 @@
             </svg>
           </div>
         </div>
+        <div
+          class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+        >
+          <div
+            name="prductimg"
+            class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+          ></div>
+          <div
+            name="detail"
+            style="grid-column: 2"
+            class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+          >
+            <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+              Lorem ipsum
+            </h1>
+            <h1 class="md:text-lg">₹1,111</h1>
+            <h3 class="text-xs text-[var(--secdetail)] md:text-lg">Size:21</h3>
+            <div
+              class="flex items-center text-xs text-[var(--secdetail)] gap-x-1 md:text-lg"
+            >
+              <h3 class="max-[385px]:text-[11px]">Buy later</h3>
+              <label for="savelater" class="h-fit">
+                <input id="savelater" type="checkbox" class="hidden" />
+                <svg
+                  viewBox="0 0 256 256"
+                  id="heart"
+                  class="w-4 fill-[var(--secdetail)]"
+                >
+                  <path
+                    stroke-width="20px"
+                    stroke="var(--secdetail)"
+                    fill="none"
+                    d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div
+            style="grid-column: 3"
+            class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+          >
+            <div class="rating flex gap-1 mt-[40%] min-[685px]:m-0">
+              <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                <path
+                  d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                />
+              </svg>
+              <span>4.9</span>
+            </div>
+            <div
+              class="quantity font flex mt-auto min-[685px]:my-auto h-6 min-w-fit"
+            >
+              <svg
+                viewBox="0 0 512 512"
+                id="down"
+                class="w-6 rounded-[4px] fill-white justify-self-end bg-[var(--primary)] p-1"
+              >
+                <g>
+                  <path
+                    d="M480,288H32c-17.673,0-32-14.327-32-32s14.327-32,32-32h448c17.673,0,32,14.327,32,32S497.673,288,480,288z"
+                  />
+                </g>
+              </svg>
+              <input
+                type="number"
+                min="0"
+                max="99"
+                value="1"
+                id="numdisp"
+                class="w-6 text-center"
+              />
+              <svg
+                id="up"
+                class="w-6 rounded-[4px] fill-white bg-[var(--primary)] p-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            style="grid-column: 4"
+            class="delete absolute h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+        >
+          <div
+            name="prductimg"
+            class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+          ></div>
+          <div
+            name="detail"
+            style="grid-column: 2"
+            class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+          >
+            <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+              Lorem ipsum
+            </h1>
+            <h1 class="md:text-lg">₹1,111</h1>
+            <h3 class="text-xs text-[var(--secdetail)] md:text-lg">Size:21</h3>
+            <div
+              class="flex items-center text-xs text-[var(--secdetail)] gap-x-1 md:text-lg"
+            >
+              <h3 class="max-[385px]:text-[11px]">Buy later</h3>
+              <label for="savelater" class="h-fit">
+                <input id="savelater" type="checkbox" class="hidden" />
+                <svg
+                  viewBox="0 0 256 256"
+                  id="heart"
+                  class="w-4 fill-[var(--secdetail)]"
+                >
+                  <path
+                    stroke-width="20px"
+                    stroke="var(--secdetail)"
+                    fill="none"
+                    d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div
+            style="grid-column: 3"
+            class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+          >
+            <div class="rating flex gap-1 mt-[40%] min-[685px]:m-0">
+              <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                <path
+                  d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                />
+              </svg>
+              <span>4.9</span>
+            </div>
+            <div
+              class="quantity font flex mt-auto min-[685px]:my-auto h-6 min-w-fit"
+            >
+              <svg
+                viewBox="0 0 512 512"
+                id="down"
+                class="w-6 rounded-[4px] fill-white justify-self-end bg-[var(--primary)] p-1"
+              >
+                <g>
+                  <path
+                    d="M480,288H32c-17.673,0-32-14.327-32-32s14.327-32,32-32h448c17.673,0,32,14.327,32,32S497.673,288,480,288z"
+                  />
+                </g>
+              </svg>
+              <input
+                type="number"
+                min="0"
+                max="99"
+                value="1"
+                id="numdisp"
+                class="w-6 text-center"
+              />
+              <svg
+                id="up"
+                class="w-6 rounded-[4px] fill-white bg-[var(--primary)] p-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            style="grid-column: 4"
+            class="delete absolute h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+        >
+          <div
+            name="prductimg"
+            class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+          ></div>
+          <div
+            name="detail"
+            style="grid-column: 2"
+            class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+          >
+            <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+              Lorem ipsum
+            </h1>
+            <h1 class="md:text-lg">₹1,111</h1>
+            <h3 class="text-xs text-[var(--secdetail)] md:text-lg">Size:21</h3>
+            <div
+              class="flex items-center text-xs text-[var(--secdetail)] gap-x-1 md:text-lg"
+            >
+              <h3 class="max-[385px]:text-[11px]">Buy later</h3>
+              <label for="savelater" class="h-fit">
+                <input id="savelater" type="checkbox" class="hidden" />
+                <svg
+                  viewBox="0 0 256 256"
+                  id="heart"
+                  class="w-4 fill-[var(--secdetail)]"
+                >
+                  <path
+                    stroke-width="20px"
+                    stroke="var(--secdetail)"
+                    fill="none"
+                    d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div
+            style="grid-column: 3"
+            class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+          >
+            <div class="rating flex gap-1 mt-[40%] min-[685px]:m-0">
+              <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                <path
+                  d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                />
+              </svg>
+              <span>4.9</span>
+            </div>
+            <div
+              class="quantity font flex mt-auto min-[685px]:my-auto h-6 min-w-fit"
+            >
+              <svg
+                viewBox="0 0 512 512"
+                id="down"
+                class="w-6 rounded-[4px] fill-white justify-self-end bg-[var(--primary)] p-1"
+              >
+                <g>
+                  <path
+                    d="M480,288H32c-17.673,0-32-14.327-32-32s14.327-32,32-32h448c17.673,0,32,14.327,32,32S497.673,288,480,288z"
+                  />
+                </g>
+              </svg>
+              <input
+                type="number"
+                min="0"
+                max="99"
+                value="1"
+                id="numdisp"
+                class="w-6 text-center"
+              />
+              <svg
+                id="up"
+                class="w-6 rounded-[4px] fill-white bg-[var(--primary)] p-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            style="grid-column: 4"
+            class="delete absolute h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+        >
+          <div
+            name="prductimg"
+            class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+          ></div>
+          <div
+            name="detail"
+            style="grid-column: 2"
+            class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+          >
+            <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+              Lorem ipsum
+            </h1>
+            <h1 class="md:text-lg">₹1,111</h1>
+            <h3 class="text-xs text-[var(--secdetail)] md:text-lg">Size:21</h3>
+            <div
+              class="flex items-center text-xs text-[var(--secdetail)] gap-x-1 md:text-lg"
+            >
+              <h3 class="max-[385px]:text-[11px]">Buy later</h3>
+              <label for="savelater" class="h-fit">
+                <input id="savelater" type="checkbox" class="hidden" />
+                <svg
+                  viewBox="0 0 256 256"
+                  id="heart"
+                  class="w-4 fill-[var(--secdetail)]"
+                >
+                  <path
+                    stroke-width="20px"
+                    stroke="var(--secdetail)"
+                    fill="none"
+                    d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div
+            style="grid-column: 3"
+            class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+          >
+            <div class="rating flex gap-1 mt-[40%] min-[685px]:m-0">
+              <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                <path
+                  d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                />
+              </svg>
+              <span>4.9</span>
+            </div>
+            <div
+              class="quantity font flex mt-auto min-[685px]:my-auto h-6 min-w-fit"
+            >
+              <svg
+                viewBox="0 0 512 512"
+                id="down"
+                class="w-6 rounded-[4px] fill-white justify-self-end bg-[var(--primary)] p-1"
+              >
+                <g>
+                  <path
+                    d="M480,288H32c-17.673,0-32-14.327-32-32s14.327-32,32-32h448c17.673,0,32,14.327,32,32S497.673,288,480,288z"
+                  />
+                </g>
+              </svg>
+              <input
+                type="number"
+                min="0"
+                max="99"
+                value="1"
+                id="numdisp"
+                class="w-6 text-center"
+              />
+              <svg
+                id="up"
+                class="w-6 rounded-[4px] fill-white bg-[var(--primary)] p-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            style="grid-column: 4"
+            class="delete absolute h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+        >
+          <div
+            name="prductimg"
+            class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+          ></div>
+          <div
+            name="detail"
+            style="grid-column: 2"
+            class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+          >
+            <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+              Lorem ipsum
+            </h1>
+            <h1 class="md:text-lg">₹1,111</h1>
+            <h3 class="text-xs text-[var(--secdetail)] md:text-lg">Size:21</h3>
+            <div
+              class="flex items-center text-xs text-[var(--secdetail)] gap-x-1 md:text-lg"
+            >
+              <h3 class="max-[385px]:text-[11px]">Buy later</h3>
+              <label for="savelater" class="h-fit">
+                <input id="savelater" type="checkbox" class="hidden" />
+                <svg
+                  viewBox="0 0 256 256"
+                  id="heart"
+                  class="w-4 fill-[var(--secdetail)]"
+                >
+                  <path
+                    stroke-width="20px"
+                    stroke="var(--secdetail)"
+                    fill="none"
+                    d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div
+            style="grid-column: 3"
+            class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+          >
+            <div class="rating flex gap-1 mt-[40%] min-[685px]:m-0">
+              <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                <path
+                  d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                />
+              </svg>
+              <span>4.9</span>
+            </div>
+            <div
+              class="quantity font flex mt-auto min-[685px]:my-auto h-6 min-w-fit"
+            >
+              <svg
+                viewBox="0 0 512 512"
+                id="down"
+                class="w-6 rounded-[4px] fill-white justify-self-end bg-[var(--primary)] p-1"
+              >
+                <g>
+                  <path
+                    d="M480,288H32c-17.673,0-32-14.327-32-32s14.327-32,32-32h448c17.673,0,32,14.327,32,32S497.673,288,480,288z"
+                  />
+                </g>
+              </svg>
+              <input
+                type="number"
+                min="0"
+                max="99"
+                value="1"
+                id="numdisp"
+                class="w-6 text-center"
+              />
+              <svg
+                id="up"
+                class="w-6 rounded-[4px] fill-white bg-[var(--primary)] p-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            style="grid-column: 4"
+            class="delete absolute h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <script>
+          const up = document.getElementById("up");
+          const numdisp = document.getElementById("numdisp");
+          const down = document.getElementById("down");
+          up.addEventListener("click", () => {
+            numdisp.stepUp();
+          });
+          down.addEventListener("click", () => {
+            numdisp.stepDown();
+          });
+        </script>
       </div>
     </main>
     <script>
-      const main = document.querySelector(" main");
+      const main = document.querySelector("main");
       document.querySelector("aside").style.top =
         document.querySelector("header").offsetHeight + "px";
+      main.style.height =
+        100 -
+        (document.querySelector("header").offsetHeight +
+          document.querySelector("aside").offsetHeight) +
+        "vh";
       main.style.top =
         document.querySelector("header").offsetHeight +
         document.querySelector("aside").offsetHeight +
-        16 +
         "px";
     </script>
   </body>
