@@ -1,0 +1,12 @@
+<svg data-name="01-Arrow-direction-pointer" id="_01-Arrow-direction-pointer"
+  xmlns="http://www.w3.org/2000/svg" viewBox="6.46 11 25.54 10">
+  <title></title>
+  <polyline fill="none" points="26.837 20 31 16 26.837 12"
+    style="     stroke: #21a6ff;     stroke-linecap: round;     stroke-linejoin: round;     stroke-width: 2px;   "></polyline>
+  <polyline fill="none" points="20.378 20 24.541 16 20.378 12"
+    style="     stroke: #57bcff;     stroke-linecap: round;     stroke-linejoin: round;     stroke-width: 2px;   "></polyline>
+  <polyline points="13.919 20 18.081 16 13.919 12"
+    style="     fill: none;     stroke: #71c6ff;     stroke-linecap: round;     stroke-linejoin: round;     stroke-width: 2px;   "></polyline>
+  <polyline points="7.459 20 11.622 16 7.459 12"
+    style="     fill: none;     stroke: #7dc9ff;     stroke-linecap: round;     stroke-linejoin: round;     stroke-width: 2px;   "></polyline>
+</svg>
