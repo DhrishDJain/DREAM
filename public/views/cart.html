@@ -133,6 +133,18 @@
           transform: translateX(40px);
           color: var(--primary);
         }
+        .wishprdtimg {
+          grid-column: 2 !important;
+          grid-row: 1;
+        }
+        .wishdetail {
+          grid-column: 3 !important;
+          grid-row: 1;
+        }
+        .removefrmwish {
+          grid-column: 1 !important;
+          grid-row: 1;
+        }
       }
       .checklabel input:checked ~ .heart path {
         fill: var(--secdetail);
@@ -178,6 +190,13 @@
         100% {
           opacity: 1;
         }
+      }
+      .atcbtn:checked ~ .tick {
+        display: block;
+      }
+      .atcbtn:checked ~ .plus,
+      .atcspan {
+        display: none;
       }
     </style>
   </head>
@@ -255,16 +274,19 @@
           class="section cursor-pointer relative flex flex-nowrap font font-extrabold text-white tracking-[3px] items-center overflow-y-hidden overflow-x-auto noscroll mb-1 md:mb-4 gap-x-[3vw] h-full"
         >
           <div
+            name="cart"
             class="secbtn flex items-center justify-center h-fit min-w-[8rem] active"
           >
             <span>Cart</span>
           </div>
           <div
+            name="order"
             class="secbtn flex items-center justify-center h-fit min-w-[8rem]"
           >
             <span>Order</span>
           </div>
           <div
+            name="wishlist"
             class="secbtn flex items-center justify-center h-fit min-w-[8rem]"
           >
             <span>Whishlist</span>
@@ -283,11 +305,12 @@
             underline.style.left = `${activeTab.offsetLeft}px`;
           }
 
-          secbtn.forEach((tab) => {
+          secbtn.forEach((tab, index) => {
             tab.addEventListener("click", () => {
               secbtn.forEach((t) => t.classList.remove("active"));
               tab.classList.add("active");
               updateUnderline();
+              switchsec(index);
             });
           });
 
@@ -414,11 +437,13 @@
     </aside>
 
     <main
-      class="fixed w-full bg-[var(--primary)] overflow-hidden bottom-0 font rounded-t-3xl  "
+      class="fixed w-full bg-[var(--primary)] overflow-hidden bottom-0 font rounded-t-3xl transition-all"
     >
-      <section class="cart lg:grid grid-cols-[25%,auto] font-extrabold  gap-x-6 w-full h-full lg:p-4">
+      <section
+        class="w-full bg-[var(--primary)] overflow-hidden bottom-0 font rounded-t-3xl transition-all visiblesec lg:grid grid-cols-[25%,auto] font-extrabold gap-x-6 h-full lg:p-4"
+      >
         <div
-          class="billcontainer z-10 relative lg:static bg-[var(--primary)] h-full w-full px-1 rounded-t-3xl lg:flex flex-col gap-y-2 overflow-x-hidden overflow-y-auto noscroll tracking-widest text-white select-none transition-all duration-100"
+          class="billcontainer z-10 relative lg:static bg-[var(--primary)] h-full w-full px-3 lg:px-1 rounded-t-3xl lg:flex flex-col gap-y-2 overflow-x-hidden overflow-y-auto noscroll tracking-widest text-white select-none transition-all duration-100"
         >
           <div
             class="closebill sticky lg:hidden w-full py-3 bg-[var(--primary)]"
@@ -1666,7 +1691,7 @@
             <div
               name="detail"
               style="grid-column: 2"
-              class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+              class="detail flex flex-col min-w-full pl-2 justify-around gap-y-4 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
             >
               <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
                 Lorem ipsum
@@ -1750,7 +1775,360 @@
               </svg>
             </div>
           </div>
+        </div>
+        <script>
+          const billcontainer = document.querySelector(".billcontainer");
+          const openbill = document.querySelector(".openbill");
+          const closebill = document.querySelector(".closebill");
+          const checkoutbtn = document.querySelector(".checkoutbtn");
+          const closed = document.querySelector(".closed");
 
+          billcontainer.style.top = billcontainer.offsetHeight + "px";
+          openbill.addEventListener("click", () => {
+            billcontainer.style.top = 0;
+            closed.classList.add("hidden");
+            checkoutbtn.classList.remove("hidden");
+            openbill.classList.add("hidden");
+          });
+          closebill.addEventListener("click", () => {
+            openbill.classList.remove("hidden");
+            closed.classList.remove("hidden");
+            checkoutbtn.classList.add("hidden");
+            billcontainer.style.top = billcontainer.offsetHeight + "px";
+          });
+        </script>
+      </section>
+      <section
+        class="visiblesec hidden relative font text-white tracking-[3px] font-extrabold lg:p-4 lg:grid grid-cols-[25%,auto] gap-x-6 h-full w-full"
+      >
+        <div
+          class="orderdetail bg-[var(--primary)] z-10 absolute lg:static px-3 lg:p-0 min-h-full h-full w-full overflow-y-auto noscroll flex flex-col gap-y-3 transition-all duration-150"
+        >
+          <div
+            class="slidedown lg:hidden sticky pb-3 w-full bg-[var(--primary)]"
+          >
+            <div
+              class="mx-auto w-36 min-h-2 rounded-xl bg-white opacity-60"
+            ></div>
+          </div>
+          <div class="tracking">
+            <span class="font-extrabold text-3xl">Order Status</span>
+
+            <div class="booked flex items-center gap-x-3 mt-2">
+              <div class="symbol rounded-full border-[3px] border-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  class="w-9 m-3"
+                  fill="#fff"
+                >
+                  <path
+                    d="M620-163 450-333l56-56 114 114 226-226 56 56-282 282Zm220-397h-80v-200h-80v120H280v-120h-80v560h240v80H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v200ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"
+                  />
+                </svg>
+              </div>
+              <span class="font-semibold text-xl">Booked</span>
+            </div>
+            <div class="trackdetail ml-[1.9rem] flex gap-x-7">
+              <div class="vl bg-white w-1 h-16"></div>
+              <div class="w-full">
+                <h1 class="font-bold">On 12th Jan 2024</h1>
+                <p class="text-sm">
+                  Your order has been booked and been packed
+                </p>
+              </div>
+            </div>
+            <div class="packed flex items-center gap-x-3">
+              <div class="symbol rounded-full border-[3px] border-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  class="w-9 m-3"
+                  fill="#fff"
+                >
+                  <path
+                    d="M160-80v-440H80v-240h208q-5-9-6.5-19t-1.5-21q0-50 35-85t85-35q23 0 43 8.5t37 23.5q17-16 37-24t43-8q50 0 85 35t35 85q0 11-2 20.5t-6 19.5h208v240h-80v440H160Zm400-760q-17 0-28.5 11.5T520-800q0 17 11.5 28.5T560-760q17 0 28.5-11.5T600-800q0-17-11.5-28.5T560-840Zm-200 40q0 17 11.5 28.5T400-760q17 0 28.5-11.5T440-800q0-17-11.5-28.5T400-840q-17 0-28.5 11.5T360-800ZM160-680v80h280v-80H160Zm280 520v-360H240v360h200Zm80 0h200v-360H520v360Zm280-440v-80H520v80h280Z"
+                  />
+                </svg>
+              </div>
+              <span class="font-semibold text-xl">Packed</span>
+            </div>
+            <div class="trackdetail ml-8 flex gap-x-7">
+              <div class="vl bg-white w-[0.1rem] h-16"></div>
+              <div class="w-full">
+                <h1 class="font-bold">On 12th Jan 2024</h1>
+                <p class="text-sm">
+                  Your order has been packed and ready for dispatch
+                </p>
+              </div>
+            </div>
+            <div class="Ofd flex items-center gap-x-3">
+              <div class="symbol rounded-full border-[3px] border-white">
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 390.40 390.40"
+                  xml:space="preserve"
+                  class="w-9 m-3"
+                  fill="#000000"
+                  stroke="#fff"
+                  stroke-width="4"
+                >
+                  <path
+                    style="fill: #fff"
+                    d="M297.763,211.459c0,5.947,4.848,10.861,10.861,10.861h14.093c5.948,0,10.861-4.848,10.861-10.861 c0-5.947-4.848-10.861-10.861-10.861h-14.093C302.676,200.598,297.763,205.446,297.763,211.459z"
+                  />
+                  <path
+                    style="fill: #fff"
+                    d="M389.367,177.261L334.676,74.279c-1.616-3.814-5.43-5.947-9.762-5.947h-53.657 c-5.947,0-10.861,4.848-10.861,10.861v190.255h-25.471V149.075h5.43c5.947,0,10.861-4.848,10.861-10.861V79.127 c0-5.947-4.848-10.861-10.861-10.861h-41.18c4.331-7.046,6.529-14.61,6.529-23.273C205.707,20.04,184.567,0,159.614,0 c-13.576,0-25.988,5.947-34.133,15.709c-8.145-9.697-20.622-15.644-34.198-15.644c-24.954,0-46.093,20.04-46.093,44.994 c0,8.663,2.715,16.808,6.529,23.273H11.121c-5.947,0-10.861,4.848-10.861,10.861v59.087c0,5.947,4.848,10.861,10.861,10.861h5.43 v120.307h-5.43c-5.947,0-10.861,4.849-10.861,10.861v64.517c0,5.947,4.848,10.861,10.861,10.861h27.087 c4.848,20.04,22.756,34.715,44.412,34.715s39.564-14.61,44.412-34.715h140.929c4.848,20.04,22.756,34.715,44.412,34.715 c21.657,0,39.564-14.61,44.412-34.715h22.238c5.947,0,10.861-4.848,10.861-10.861v-162.65 C390.466,180.558,389.949,178.877,389.367,177.261z M368.81,333.899h-11.378c-4.848-20.04-22.756-34.715-44.412-34.715 s-39.564,14.61-44.412,34.715H127.679c-4.848-20.04-22.756-34.715-44.412-34.715s-39.564,14.61-44.412,34.715H22.499v-42.796 h346.828v42.796H368.81z M312.438,368.614c-13.576,0-24.372-10.861-24.372-23.855s10.861-23.855,24.372-23.855 c13.576,0,24.372,10.861,24.372,23.855S325.949,368.614,312.438,368.614z M83.202,368.614c-13.576,0-24.372-10.861-24.372-23.855 s10.861-23.855,24.372-23.855s24.372,10.861,24.372,23.855C106.992,357.754,96.196,368.614,83.202,368.614z M105.957,127.418V90.57 h39.564v36.848H105.957z M213.27,149.075v120.307h-46.093V149.075H213.27z M145.521,269.446h-39.564V149.075h39.564V269.446z M38.208,149.075h46.093v120.307H38.208V149.075z M230.079,127.418h-62.836V90.57h62.319v36.848H230.079z M21.917,90.053h62.319 v37.366H21.917V90.053z M368.81,269.446h-86.756V90.053h36.331l50.424,94.836L368.81,269.446L368.81,269.446z M136.858,45.059 c0-12.994,10.279-23.273,23.273-23.273s24.372,10.279,24.372,23.273s-10.279,23.273-23.273,23.273h-24.372 C136.858,68.331,136.858,45.059,136.858,45.059z M91.864,21.721c12.994,0,23.273,10.279,23.273,23.273v23.273H90.765 c-12.994,0-23.273-10.279-23.273-23.273S78.87,21.721,91.864,21.721z"
+                  />
+                </svg>
+              </div>
+              <span class="font-semibold text-xl">Out for delivery</span>
+            </div>
+            <div class="trackdetail ml-8 flex gap-x-7">
+              <div class="vl bg-white w-[0.1rem] h-16"></div>
+              <div class="w-full">
+                <h1 class="font-bold">On 13th Jan 2024</h1>
+                <p class="text-sm">
+                  Your order is expected to arrive on 14th Jan 2024
+                </p>
+              </div>
+            </div>
+            <div class="delivered flex items-center gap-x-3">
+              <div class="symbol rounded-full border-[3px] border-white">
+                <svg
+                  fill="#ffffff"
+                  class="w-11 m-2"
+                  viewBox="0 0 64 64"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M52.8662,34.4341l-.1855-.1553c-.4968-.4137-1.0825-.6448-1.6807-.7107v-10.5681h.5c.8271,0,1.5-.6729,1.5-1.5v-6c0-.8271-.6729-1.5-1.5-1.5h-4.9778c.1049-.0766,.2103-.1512,.3118-.2393,2.1826-1.895,2.1543-3.6997,2.1523-3.7759-.0059-.1895-.1182-.3594-.291-.439-.0703-.0327-1.75-.79-3.915-.4653-1.3951,.2097-2.538,.8584-3.2874,1.6213-.621-1.0389-1.7364-1.7019-2.9929-1.7019h-1c-1.2579,0-2.3728,.6625-2.9934,1.7014-.7495-.7627-1.8922-1.4112-3.2869-1.6208-2.166-.3247-3.8457,.4326-3.915,.4653-.1729,.0796-.2852,.2495-.291,.439-.002,.0762-.0303,1.8809,2.1533,3.7764,.1013,.0879,.2065,.1623,.3111,.2388h-4.9781c-.8271,0-1.5,.6729-1.5,1.5v6c0,.8271,.6729,1.5,1.5,1.5h.5v12.9702h-2.0059c-1.3349,0-2.9818,1.712-3.9941,2.9432v-1.4135c0-1.3784-1.1211-2.5-2.5-2.5h-4c-1.3789,0-2.5,1.1216-2.5,2.5v15c0,1.3784,1.1211,2.5,2.5,2.5h4c1.3789,0,2.5-1.1216,2.5-2.5v-.9935c.862,.3297,1.7813,.5083,2.7002,.5121,1.3291,.0054,3.7402,.0142,6.1436,.0142,1.918,0,3.8311-.0054,5.1836-.022l.6201-.0059c3.8154-.0322,6.8281-.0581,11.9756-4.8564,3.2236-3.0044,5.957-6.1724,7.6826-8.3013,1.0791-1.3325,.8818-3.312-.4395-4.4131Zm-2.8662-.8198c-.5712,.1215-1.115,.3999-1.5615,.8388l-5.6436,5.5469h-.7949V23h8v10.6143Zm-8-18.6143v7h-8v-7h8Zm-7,22.3705v-14.3705h6v17h-5.6928c.0971-.3987,.1225-.838,.1225-1.3779,0-.5096-.1658-.9189-.4297-1.2515ZM51.5,15c.2754,0,.5,.2241,.5,.5v6c0,.2759-.2246,.5-.5,.5h-8.5v-6.998l8.5-.002Zm-6.5713-4.9302c.3262-.0493,.6396-.0693,.9355-.0693,.9238,0,1.6768,.1963,2.083,.3306-.1006,.5054-.4639,1.542-1.7686,2.6743-.8247,.7158-1.8089,.9547-2.6747,.9946h-.5879c-.118-.006-.234-.0137-.3428-.0249h-.001c-.5664-.0581-1.0146-.521-1.0205-1.0488v-.3623c0-.791,1.3467-2.1895,3.377-2.4941Zm-7.4287-.0698h1c1.0427,0,1.9507,.6369,2.323,1.5952-.1702,.3301-.2712,.6605-.2712,.9688v.3677c.0043,.3904,.1217,.7563,.322,1.0684h-5.7481c.2007-.313,.3183-.6807,.3226-1.0737v-.3623c0-.3082-.1011-.6385-.2711-.9686,.3714-.959,1.2789-1.5954,2.3229-1.5954Zm-7.6777,3.0059c-1.3076-1.1348-1.6699-2.1719-1.7705-2.6743,.5371-.1782,1.6748-.4648,3.0195-.2617,2.0303,.3047,3.377,1.7031,3.377,2.4941v.3569c-.0059,.5332-.4541,.9961-1.0205,1.0542h-.001c-.1087,.0112-.2247,.0189-.3426,.0249h-.5879c-.8657-.0399-1.85-.2788-2.674-.9941Zm-5.8223,8.4941v-6c0-.2759,.2246-.5,.5-.5l8.5,.002v6.998h-8.5c-.2754,0-.5-.2241-.5-.5Zm2,1.5h8v13.6061c-1.2733-.6221-2.9523-.6359-3.0654-.6359h-4.9346v-12.9702Zm-8,29.5c0,.8271-.6729,1.5-1.5,1.5h-4c-.8271,0-1.5-.6729-1.5-1.5v-15c0-.8271,.6729-1.5,1.5-1.5h4c.8271,0,1.5,.6729,1.5,1.5v15Zm34.5283-14.2827c-1.7051,2.104-4.4062,5.2344-7.5869,8.1997-4.8633,4.5332-7.7051,4.5571-11.3018,4.5879l-.624,.0059c-3.041,.0381-8.9238,.0171-11.3115,.0078-.9418-.0035-1.848-.212-2.7041-.5998v-9.8643c1.0238-1.4363,2.9326-3.5843,3.9941-3.5843h7.9404c.0352,0,3.4951,.0449,3.4951,1.6519,0,1.8667,0,2.062-6.0947,5.6089-.2383,.1387-.3193,.4448-.1807,.6836,.0938,.1597,.2607,.2485,.4326,.2485,.0859,0,.1729-.022,.252-.0679,3.6129-2.1029,5.2478-3.1179,5.9881-4.0952h8.173c.1309,0,.2568-.0513,.3506-.1436l5.7891-5.6904c.7969-.7808,2.042-.8325,2.9004-.1191l.1855,.1553c.9043,.7529,1.04,2.106,.3027,3.0151Z"
+                  />
+                </svg>
+              </div>
+              <div class="flex flex-col gap-y-1">
+                <span class="font-semibold text-xl">Delivered</span>
+                <span class="text-sm">Delivered on 14th Jan 2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail flex flex-col gap-y-2">
+            <h1 class="adderesshead font-extrabold text-3xl">
+              Deliverying address
+            </h1>
+            <div class="sperator w-full min-h-1 bg-white rounded"></div>
+            <p class="adderess tracking-wide">
+              305/A bldg. no 20, Lotus Apartments, Andheri
+              West,Mumbai,Maharashtra,400053,India
+            </p>
+            <div class="sperator w-full min-h-1 bg-white rounded"></div>
+            <h1 class="payment font-extrabold text-3xl">Contact info</h1>
+            <div class="sperator w-full min-h-1 bg-white rounded"></div>
+            <div class="flex felx-col justify-between">
+              <h1 class="font-extrabold">Mobile no.</h1>
+              <span>+91 1111111111</span>
+            </div>
+            <div class="flex felx-col justify-between">
+              <h1 class="font-extrabold">Email</h1>
+              <span>rayanshijewel@gmail.com</span>
+            </div>
+            <div class="sperator w-full min-h-1 bg-white rounded"></div>
+            <h1 class="Pricedetail font-extrabold text-3xl">Price Details</h1>
+            <div class="sperator w-full min-h-1 bg-white rounded"></div>
+            <div class="distribution">
+              <div class="flex justify-between font-normal">
+                <h2 class="subtotal">Subtotal</h2>
+                <h2 class="subtotal">₹11,311</h2>
+              </div>
+              <div class="flex justify-between font-normal">
+                <h2 class="subtotal">Discount(2%)</h2>
+                <h2 class="subtotal">-₹222.22</h2>
+              </div>
+              <div class="flex justify-between font-normal">
+                <h2 class="subtotal">Delivery Charges</h2>
+                <h2 class="subtotal">₹11.11</h2>
+              </div>
+              <div class="flex justify-between font-normal">
+                <h2 class="subtotal">Taxes</h2>
+                <h2 class="subtotal">₹11.11</h2>
+              </div>
+              <div class="method flex items-center justify-between font-normal">
+                <h1>Payment using</h1>
+                <div class="flex items-center gap-x-2">
+                  <svg
+                    name="google pay"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    class="w-6"
+                  >
+                    <path
+                      fill="#e64a19"
+                      d="M42.858,11.975c-4.546-2.624-10.359-1.065-12.985,3.481L23.25,26.927	c-1.916,3.312,0.551,4.47,3.301,6.119l6.372,3.678c2.158,1.245,4.914,0.506,6.158-1.649l6.807-11.789	C48.176,19.325,46.819,14.262,42.858,11.975z"
+                    />
+                    <path
+                      fill="#fbc02d"
+                      d="M35.365,16.723l-6.372-3.678c-3.517-1.953-5.509-2.082-6.954,0.214l-9.398,16.275	c-2.624,4.543-1.062,10.353,3.481,12.971c3.961,2.287,9.024,0.93,11.311-3.031l9.578-16.59	C38.261,20.727,37.523,17.968,35.365,16.723z"
+                    />
+                    <path
+                      fill="#43a047"
+                      d="M36.591,8.356l-4.476-2.585c-4.95-2.857-11.28-1.163-14.137,3.787L9.457,24.317	c-1.259,2.177-0.511,4.964,1.666,6.22l5.012,2.894c2.475,1.43,5.639,0.582,7.069-1.894l9.735-16.86	c2.017-3.492,6.481-4.689,9.974-2.672L36.591,8.356z"
+                    />
+                    <path
+                      fill="#1e88e5"
+                      d="M19.189,13.781l-4.838-2.787c-2.158-1.242-4.914-0.506-6.158,1.646l-5.804,10.03	c-2.857,4.936-1.163,11.252,3.787,14.101l3.683,2.121l4.467,2.573l1.939,1.115c-3.442-2.304-4.535-6.92-2.43-10.555l1.503-2.596	l5.504-9.51C22.083,17.774,21.344,15.023,19.189,13.781z"
+                    />
+                  </svg>
+                  Google Pay
+                </div>
+              </div>
+            </div>
+            <div class="sperator w-full min-h-1 bg-white rounded"></div>
+            <div class="flex justify-between font-extrabold">
+              <h1 class="total text-2xl">Total</h1>
+              <h1 class="subtotal text-2xl">₹11,111</h1>
+            </div>
+            <div class="sperator w-full min-h-1 h-1 bg-white rounded"></div>
+          </div>
+          <div
+            style="box-shadow: 0px 3px 18px var(--primary)"
+            class="expected fixed flex flex-col items-center rounded-t-xl z-10 justify-center gap-y-4 h-20 bg-[var(--primary)] w-full mt-auto left-0 bottom-0 lg:hidden"
+          >
+            <div
+              class="slideup mx-auto w-36 h-2 rounded-xl bg-white opacity-60"
+            ></div>
+            <h1 class="text-xl font-extrabold">Arriving on 12th jan 2024</h1>
+          </div>
+        </div>
+        <div
+          style="grid-column: 2"
+          class="itemcontainer overflow-y-scroll h-full flex flex-col noscroll gap-y-2 text-black px-4 mt-4 lg:p-0 lg:m-0"
+        >
+          <div
+            class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+          >
+            <div
+              name="prductimg"
+              class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+            ></div>
+            <div
+              name="detail"
+              style="grid-column: 2"
+              class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+            >
+              <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+                Lorem ipsum
+              </h1>
+              <h1 class="md:text-lg">₹1,111</h1>
+              <h3 class="text-xs text-[var(--secdetail)] md:text-lg">
+                Size:21
+              </h3>
+              <span class="text-xs text-[var(--secdetail)] md:text-lg">
+                Expected by 14th Jan 2024
+              </span>
+              <span class="text-xs text-[var(--secdetail)] md:text-lg">
+                Qty 1
+              </span>
+            </div>
+            <div
+              style="grid-column: 3"
+              class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+            >
+              <div class="rating flex gap-1 my-auto min-[685px]:m-0">
+                <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                  <path
+                    d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                  />
+                </svg>
+                <span>4.9</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+          >
+            <div
+              name="prductimg"
+              class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+            ></div>
+            <div
+              name="detail"
+              style="grid-column: 2"
+              class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+            >
+              <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+                Lorem ipsum
+              </h1>
+              <h1 class="md:text-lg">₹1,111</h1>
+              <h3 class="text-xs text-[var(--secdetail)] md:text-lg">
+                Size:21
+              </h3>
+              <span class="text-xs text-[var(--secdetail)] md:text-lg">
+                Expected by 14th Jan 2024
+              </span>
+              <span class="text-xs text-[var(--secdetail)] md:text-lg">
+                Qty 1
+              </span>
+            </div>
+            <div
+              style="grid-column: 3"
+              class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+            >
+              <div class="rating flex gap-1 my-auto min-[685px]:m-0">
+                <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                  <path
+                    d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                  />
+                </svg>
+                <span>4.9</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+          >
+            <div
+              name="prductimg"
+              class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+            ></div>
+            <div
+              name="detail"
+              style="grid-column: 2"
+              class="detail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+            >
+              <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+                Lorem ipsum
+              </h1>
+              <h1 class="md:text-lg">₹1,111</h1>
+              <h3 class="text-xs text-[var(--secdetail)] md:text-lg">
+                Size:21
+              </h3>
+              <span class="text-xs text-[var(--secdetail)] md:text-lg">
+                Expected by 14th Jan 2024
+              </span>
+              <span class="text-xs text-[var(--secdetail)] md:text-lg">
+                Qty 1
+              </span>
+            </div>
+            <div
+              style="grid-column: 3"
+              class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
+            >
+              <div class="rating flex gap-1 my-auto min-[685px]:m-0">
+                <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                  <path
+                    d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                  />
+                </svg>
+                <span>4.9</span>
+              </div>
+            </div>
+          </div>
           <script>
             const up = document.querySelectorAll(".up");
             const numdisp = document.querySelectorAll(".numdisp");
@@ -1768,38 +2146,133 @@
           </script>
         </div>
         <script>
-          const itemcontainer = document.querySelector(".itemcontainer");
-          const billcontainer = document.querySelector(".billcontainer");
-          const openbill = document.querySelector(".openbill");
-          const closebill = document.querySelector(".closebill");
-          const checkoutbtn = document.querySelector(".checkoutbtn");
-          const closed = document.querySelector(".closed");
-          if (screen.width < 1024) {
-            itemcontainer.style.paddingBottom =
-              document.querySelector(".item").offsetHeight +
-              document.querySelector(".checkoutbtn").offsetHeight +
-              8 +
-              "px";
-            console.log("sdcsa");
-          }
-          billcontainer.style.top = billcontainer.offsetHeight + "px";
-          openbill.addEventListener("click", () => {
-            billcontainer.style.top = 0;
-            closed.classList.add("hidden");
-            checkoutbtn.classList.remove("hidden");
-            openbill.classList.add("hidden");
+          const orderdetail = document.querySelector(".orderdetail");
+          const slidedown = document.querySelector(".slidedown");
+          const slideup = document.querySelector(".slideup");
+          const expected = document.querySelector(".expected");
+
+          orderdetail.style.top = "100vh";
+
+          slideup.addEventListener("click", (event) => {
+            orderdetail.style.top = 0;
+            expected.classList.add("hidden");
           });
-          closebill.addEventListener("click", () => {
-            openbill.classList.remove("hidden");
-            closed.classList.remove("hidden");
-            checkoutbtn.classList.add("hidden");
-            billcontainer.style.top = billcontainer.offsetHeight + "px";
+          slidedown.addEventListener("click", (event) => {
+            orderdetail.style.top = orderdetail.offsetHeight + "px";
+            expected.classList.remove("hidden");
           });
         </script>
       </section>
+      <section class="visiblesec hidden h-full w-full p-4">
+        <div class="itemcontainer flex flex-col gap-y-2">
+          <div
+            class="grid grid-cols-[min-content,auto,max-content] grid-rows-1 lg:grid-cols-[min-content,min-content,auto,max-content] relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
+          >
+            <div
+              name="prductimg"
+              style="grid-column: 1"
+              class="wishprdtimg bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
+            ></div>
+            <div
+              name="detail"
+              style="grid-column: 2"
+              class="wishdetail flex flex-col min-w-full pl-2 justify-around gap-y-1 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
+            >
+              <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
+                Lorem ipsum
+              </h1>
+              <h1 class="md:text-lg">₹1,111</h1>
+              <h3 class="text-xs text-[var(--secdetail)] md:text-lg">
+                Size:21
+              </h3>
+              <div
+                class="rating absolute lg:static right-7 top-[35%] flex gap-1 my-auto min-[685px]:m-0"
+              >
+                <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
+                  <path
+                    d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
+                  />
+                </svg>
+                <span>4.9</span>
+              </div>
+              <h3 class="text-xs text-[var(--secdetail)] md:text-lg">
+                Added on 11th July 2024
+              </h3>
+            </div>
+
+            <div
+              style="grid-column: 3"
+              class="removefrmwish absolute lg:static h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </div>
+            <div
+              class="addtocart flex gap-x-2 h-min w-max p-2 relative rounded-md mt-auto lg:m-0 bg-[var(--primary)] font-extrabold text-white transition-all duration-100"
+            >
+              <input
+                type="checkbox"
+                class="atcbtn w-full h-full opacity-0 absolute left-0"
+              />
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="tick hidden w-5"
+              >
+                <polyline
+                  fill="none"
+                  points="3.7 14.3 9.6 19 20.3 5"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="plus w-5 fill-white"
+              >
+                <path
+                  d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
+                />
+              </svg>
+              <span class="hidden atcspan lg:block">Add to cart</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
     <script>
       const main = document.querySelector("main");
+      const visiblesec = document.querySelectorAll(".visiblesec");
+      const itemcontainer = document.querySelectorAll(".itemcontainer");
+      if (screen.width < 1024) {
+        itemcontainer.forEach((t) => {
+          t.style.paddingBottom =
+            document.querySelector(".item").offsetHeight +
+            document.querySelector(".expected").offsetHeight +
+            8 +
+            "px";
+        });
+      }
+      function switchsec(visiblesecindex) {
+        visiblesec.forEach((t, index) => {
+          if (visiblesecindex != index) {
+            t.style.display = "none";
+          } else {
+            if (screen.width < 1024) {
+              t.style.display = "block";
+            } else {
+              t.style.display = "grid";
+            }
+          }
+        });
+      }
       document.querySelector("aside").style.top =
         document.querySelector("header").offsetHeight + "px";
       main.style.height =
