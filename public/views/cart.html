@@ -440,7 +440,7 @@
       class="fixed w-full bg-[var(--primary)] overflow-hidden bottom-0 font rounded-t-3xl transition-all"
     >
       <section
-        class="w-full bg-[var(--primary)] overflow-hidden bottom-0 font rounded-t-3xl transition-all visiblesec lg:grid grid-cols-[25%,auto] font-extrabold gap-x-6 h-full lg:p-4"
+        class="relative w-full bg-[var(--primary)] overflow-hidden font rounded-t-3xl transition-all visiblesec lg:grid grid-cols-[25%,auto] font-extrabold gap-x-6 h-full lg:p-4"
       >
         <div
           class="billcontainer z-10 relative lg:static bg-[var(--primary)] h-full w-full px-3 lg:px-1 rounded-t-3xl lg:flex flex-col gap-y-2 overflow-x-hidden overflow-y-auto noscroll tracking-widest text-white select-none transition-all duration-100"
@@ -1115,7 +1115,7 @@
 
         <div
           name=" "
-          class="itemcontainer flex flex-col absolute lg:static left-0 right-0 h-full lg:left-auto overflow-y-scroll noscroll gap-y-2 m-4 lg:m-0"
+          class="itemcontainer flex flex-col absolute top-0 lg:static w-full h-full lg:left-auto overflow-y-scroll noscroll gap-y-2 p-4 lg:p-0"
         >
           <div
             class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
@@ -1681,100 +1681,7 @@
               </svg>
             </div>
           </div>
-          <div
-            class="item grid relative gap-x-2 bg-white h-fit w-full items-center p-3 rounded-2xl"
-          >
-            <div
-              name="prductimg"
-              class="bg-slate-800 rounded-[100%] h-[5.5rem] w-[5.5rem]"
-            ></div>
-            <div
-              name="detail"
-              style="grid-column: 2"
-              class="detail flex flex-col min-w-full pl-2 justify-around gap-y-4 tracking-[2px] min-[615px]:flex-row min-[615px]:items-center"
-            >
-              <h1 class="font-extrabold max-[385px]:text-[15px] md:text-lg">
-                Lorem ipsum
-              </h1>
-              <h1 class="md:text-lg">₹1,111</h1>
-              <h3 class="text-xs text-[var(--secdetail)] md:text-lg">
-                Size:21
-              </h3>
-              <div
-                class="flex items-center text-xs text-[var(--secdetail)] gap-x-1 md:text-lg"
-              >
-                <h3 class="max-[385px]:text-[11px]">Buy later</h3>
-
-                <label class="checklabel relative">
-                  <input type="checkbox" class="absolute h-0 w-0" />
-
-                  <svg
-                    viewBox="0 0 256 256"
-                    class="heart w-4 h-4 relative top-0 left-0"
-                  >
-                    <path
-                      stroke-width="20px"
-                      stroke="var(--secdetail)"
-                      fill="none"
-                      d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z"
-                    ></path>
-                  </svg>
-                </label>
-              </div>
-            </div>
-            <div
-              style="grid-column: 3"
-              class="action min-h-full flex flex-col items-center gap-x-[3vw] min-[685px]:flex-row max-[1024px]:gap-x-3 w-fit"
-            >
-              <div class="rating flex gap-1 mt-[40%] min-[685px]:m-0">
-                <svg viewBox="0 0 24 24" class="w-5 fill-yellow-400">
-                  <path
-                    d="M19.467,23.316,12,17.828,4.533,23.316,7.4,14.453-.063,9H9.151L12,.122,14.849,9h9.213L16.6,14.453Z"
-                  />
-                </svg>
-                <span>4.9</span>
-              </div>
-              <div
-                class="quantity font flex mt-auto min-[685px]:my-auto h-6 min-w-fit"
-              >
-                <svg
-                  viewBox="0 0 512 512"
-                  class="down w-6 rounded-[4px] fill-white justify-self-end bg-[var(--primary)] p-1"
-                >
-                  <g>
-                    <path
-                      d="M480,288H32c-17.673,0-32-14.327-32-32s14.327-32,32-32h448c17.673,0,32,14.327,32,32S497.673,288,480,288z"
-                    />
-                  </g>
-                </svg>
-                <input
-                  type="number"
-                  min="0"
-                  max="99"
-                  value="1"
-                  class="numdisp w-6 text-center"
-                />
-                <svg
-                  class="up w-6 rounded-[4px] fill-white bg-[var(--primary)] p-1"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              style="grid-column: 4"
-              class="delete absolute h-fit w-6 right-3 top-[0.6rem] fill-[var(--secdetail)]"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -860 860 860">
-                <path
-                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-                />
-              </svg>
-            </div>
-          </div>
+        
         </div>
         <script>
           const billcontainer = document.querySelector(".billcontainer");
@@ -2276,10 +2183,10 @@
       document.querySelector("aside").style.top =
         document.querySelector("header").offsetHeight + "px";
       main.style.height =
-        100 -
+        100-
         (document.querySelector("header").offsetHeight +
           document.querySelector("aside").offsetHeight) +
-        "vh";
+        "px";
       main.style.top =
         document.querySelector("header").offsetHeight +
         document.querySelector("aside").offsetHeight +
